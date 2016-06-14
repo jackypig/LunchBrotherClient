@@ -1,0 +1,66 @@
+<div action="" method="POST" id="signupForm" class="ui form">
+    <div class="ui segment">
+		<div id="basicinfo">
+			<div id="nameinfo" class="two fields">
+				<div class="ui fluid field">
+					<input id="first_name" class="ui input fname" placeholder="First Name" type="text" name="first_name" value="">
+				</div>
+				<div class="ui fluid field">
+					<input id="last_name" class="ui input lname" placeholder="Last Name" type="text" name="last_name" value="">
+				</div>
+			</div>
+			<div class="ui fluid field">
+				<input id="email" class="ui input required email" placeholder="E-mail, this will be your username" type="text" name="email">
+			</div>
+			<div class="ui fluid required field">
+				<input id="phonenumber" class="ui input required phonenumber" placeholder="Phone Number, e.g. 7772228888" type="text" name="phonenumber">
+			</div>
+			<div class="ui fluid field">
+				<input id="password" class="ui input required password" placeholder="Password" type="password" name="password">
+			</div>
+            <!--<div class="ui fluid field">
+                <input id="signUpRegistrationCode" type="text" placeholder="Registration Code" name="signUpRegistrationCode" />
+            </div>-->
+            <div class="ui fluid field">
+                <div id="gridOptionDiv">
+                    <select id="gridOptions" class="ui dropdown" name="gridOptions">
+                        <option id="gridOptionLabel" value="">Select Your Area</option>
+                        <% _.each(grids, function(grid){ %>
+                        <option value="<%= grid.id %>"><%= grid.get('name') %></option>
+                        <% }); %>
+                    </select>
+                </div>
+            </div>
+		</div>
+	</div>
+	<button id="signUpBtn" class="center aligned ui fluid red button-lg">Create an Account</button>
+	<div class="ui divider hidden"></div>
+	<!--<div id= "fbLoginBtn" class="ui facebook fluid button">-->
+		<!--<i class="facebook icon"></i> Facebook-->
+	<!--</div>-->
+	<div class="ui divider hidden"></div>
+	<div id="signupReminder">
+		<p class="small">We use your email and mobile number to send you order confirmation and pickup notification.</p>
+	</div>
+</div>
+<div id="sendAccountActivationEmailDialog" class="ui small test modal">
+    <div class="header" style="background-color: #ffffff">
+        <label>Activation Email Sent</label>
+    </div>
+    <div class="content">
+        <table width="100%">
+            <tr>
+                <td style="font-size: 12pt">
+                    <label>Welcome to LunchBrother! An email has been sent to you, please follow the instructions in the email to activate your account.</label>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="actions">
+        <div class="one fluid ui buttons">
+            <div class="ui ok fluid button">
+                <label>OK</label>
+            </div>
+        </div>
+    </div>
+</div>

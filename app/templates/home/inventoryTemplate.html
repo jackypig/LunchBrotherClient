@@ -1,0 +1,121 @@
+<div class="ui card pickUpLocation-<%=inventory.get('pickUpLocation').id%>">
+    <div class="image" style="background-image: url(<%= inventory.get('dish').get('Image_File')._url%>);"></div>
+
+    <div class="content">
+        <div class="ui grid">
+            <div class="nine wide column dish-desc">
+                <h5 class="ui sub header"><%=inventory.get('dish').get('dishName') %>
+                    <div class="sub header">$<%=inventory.get('cashPrice') %><span class="price-hint">Tax and delivery fee included</span></div>
+                </h5>
+            </div>
+
+            <div class="seven wide column">
+                <div class="ui three column grid">
+                    <div class="column minus-btn-wrapper">
+                        <button id="<%=inventory.id %>-minusButton" class="minusone ui center aligned right floated button icon"><i class="minus icon"></i>
+                        </button>
+                    </div>
+                    <div class="column order-count-wrapper">
+                        <input class="dissph-counter ui center aligned label dish-count" id="orderNumber-<%= inventory.id %>" type="text" value="<%= inventory.get('count') %>" disabled>
+                    </div>
+                    <div class="column plus-btn-wrapper">
+                        <button id="<%=inventory.id %>-plusButton" class="plusone ui button icon center aligned"><i class="plus icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="<%=inventory.id %>">
+        <div class="ui pointing secondary menu">
+            <a class="active item" data-tab="first">Dish Detail</a>
+            <a class="item" data-tab="second">Restaurant</a>
+        </div>
+        <div class="tab-dish-detail ui grid bottom attached active tab segment" data-tab="first">
+            <div class="row">
+                <div class="dishinfo six wide column">
+                    <div class="ui list">
+                        <!--
+                        <div class="item">
+                            <div class="content">
+                                <%=inventory.get('dish').calorie %> Cal
+                            </div>
+                        </div>
+                        -->
+                        <div class="item">
+                            <div class="content">
+                                <% if(inventory.get('dish').vegetarian) { %>
+                                <span class="green">Vegetarian</span>
+                                <% } else {  %>
+                                Not Vegetarian
+                                <% } %>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="content">
+                                <% if(inventory.get('dish').glutenFree) { %>
+                                <span class="green">Gluten-Free</span>
+                                <% } else {  %>
+                                <span class="yellow">Has Gluten</span>
+                                <% } %>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="content">
+                                <% if(inventory.get('dish').get('spicy')) { %>
+                                <span class="yellow">Spicy</span>
+                                <% } else {  %>
+                                <span class="green">Not Spicy</span>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end of dishinfo-->
+                <div class="dish-detail ten wide column">
+                    <div class="content">
+                        <div class="dish-intro description">
+                            <%=inventory.get('dish').descriptionEn %>
+                        </div>
+                        <div class="dish-ingredients description">
+                            <div class="header">Ingredients:</div>
+                            <%=inventory.get('dish').ingredients %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-dish-detail ui grid bottom attached tab segment" data-tab="second">
+            <div class="row">
+                <div class="restaurantInfo sixteen wide column">
+                    <div class="ui list">
+                        <div class="header"><%=inventory.get('dish').get('restaurant').get('name') %></div>
+                        <div class="item">
+                            <i class="yelp icon"></i>
+                            <div class="content">
+                                <div class="ui small star rating" data-max-rating="5" data-rating="<%=inventory.get('dish').get('restaurant').get('rating') %>"></div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="call icon"></i>
+                            <div class="content">
+                                <%=inventory.get('dish').get('restaurant').get('telnum') %>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="home icon"></i>
+                            <div class="content">
+                                <a href="http://<%=inventory.get('dish').get('restaurant').get('url') %>" target="_blank"><%=inventory.get('dish').get('restaurant').get('url') %></a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="marker icon"></i>
+                            <div class="content">
+                                <%=inventory.get('dish').get('restaurant').get('address') %>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end of restaurantinfo-->
+            </div>
+        </div>
+    </div>
+</div>

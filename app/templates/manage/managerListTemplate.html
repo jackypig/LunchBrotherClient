@@ -1,0 +1,38 @@
+<h1 class="ui small center aligned header">All Managers</h1>
+
+<div class="ui middle aligned very relaxed list">
+    <% _.each(managers, function(manager) { %>
+    <div class="item">
+        <div class="right floated content">
+            <button class="ui circular small icon orange button" onclick="location.href='#editManager?managerId=<%= manager.id %>'"><i class="icon edit"></i></button>
+            <button class="ui circular small icon button deleteManager" data-id="<%= manager.id %>"><i class="remove icon"></i></button>
+        </div>
+        <% if (manager.get('imageFile')) { %>
+            <img class="ui avatar image" src="<%= manager.get('imageFile')._url %>">
+        <% } else { %>
+            <img class="ui avatar image" src="img/default_user.png">
+        <% } %>
+        <div class="content clickToShow" data-id="<%= manager.id %>">
+            <a class="header"><%= manager.get('firstName') %> <%= manager.get('lastName') %></a>
+            <%= manager.get('gridId').get('name') %>
+        </div>
+    </div>
+    <div class="ui segments" id="<%= manager.id %>-content">
+        <div class="ui segment" >
+            <i class="phone icon"></i>
+            <%= manager.get('telnum') %>
+        </div>
+        <div class="ui segment" >
+            <i class="mail icon"></i>
+            <a href="mailto:<%= manager.get('email') %>"><%= manager.get('email') %></a>
+        </div>
+    </div>
+    <div class="ui divider"></div>
+    <% }) %>
+</div>
+
+<div class="ui fluid  orange button toNewManager">
+    <i class="add icon"></i>
+    Add new manager
+</div>
+

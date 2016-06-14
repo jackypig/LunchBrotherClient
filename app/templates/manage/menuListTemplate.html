@@ -1,0 +1,23 @@
+<div class="menu-list ui middle aligned divided list">
+    <% _.each(menus, function(menu) { %>
+    <div class="item">
+        <div class="right floated content">
+            <div class="ui circular orange icon small button" id="menuEditBtn-<%= menu.day %>" data-inventory-ids="<%= menu.inventoryIds %>" data-date="<%= menu.date %>"><i class="icon edit"></i></div>
+        </div>
+        <div class="header"><%= menu.day %></div>
+        <div class="ui grid middle aligned content">
+            <% _.each(menu.dishes, function(dish) { %>
+            <div class="five wide column"><%= dish.dishName %></div>
+            <div class="five wide column"><%= dish.restaurantName %> (<%= dish.restaurantNumber %>)</div>
+            <div class="two wide column"><%= dish.quantity %></div>
+            <div class="two wide column"><%= dish.status %></div>
+            <div class="two wide column right aligned">$<%= dish.price %>($<%= dish.cashPrice %>)</div>
+            <% })%>
+        </div>
+    </div>
+    <% })%>
+</div>
+
+<button class="center aligned ui red button" id="publishMenu">Publish This Menu</button>
+<!--<div class="ui divider"></div>-->
+<!--<button class="center aligned ui red button" id="concealMenu">Regret</button>-->

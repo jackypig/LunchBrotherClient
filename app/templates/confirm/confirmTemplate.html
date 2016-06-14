@@ -1,0 +1,39 @@
+<div id="fullscreen">
+    <img src="./img/av_large.jpg">
+</div>
+<div class="ui segment">
+	<div id="customerinfo" class="ui page centered grid">
+		<div class="sixteen wide column">
+			<div class="ui two grid">
+				<div id="nameOnOrder" class="right aligned four wide column">Name:</div>
+				<div class="left aligned four wide column">
+					<%=fname %>&nbsp
+						<%=lname %>
+				</div>
+			</div>
+		</div>
+		<div class="sixteen wide column">
+			<div class="ui two grid">
+				<div id="confirmEmail" class="right aligned four wide column">E-mail:</div>
+				<div class="left aligned twelve wide column">
+					<%=email %>
+				</div>
+			</div>
+		</div>
+		<div class="sixteen wide column">
+			<div class="ui two grid">
+				<div id="pickUpAddress" class="right aligned four wide column">Pickup Location:</div>
+				<div class="left aligned twelve wide column">
+					<%=address %>
+						<div class="notification">
+							<span id="orderMessage">Your order will be delivered to UMD around 12:30PM, please pick it up on time. </span>
+							<span><a id="statusTracker" href="#status">Track your order.</a></span>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="ui segment">
+        <img id='smallmap' src="<%=mapUrl %>" />
+    </div>
+</div>

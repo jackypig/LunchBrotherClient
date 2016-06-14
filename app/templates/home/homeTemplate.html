@@ -1,0 +1,67 @@
+<h1 id="dishTitle" class="ui small center aligned header">Today's Special</h1>
+
+<form class="ui form" id="pickUpLocationWrapper">
+        <!--<div class="field">-->
+            <!--<div class="ui search selection dropdown college-selector">-->
+                <!--<input type="hidden" name="university">-->
+                <!--<div class="default text">Select a College</div><i class="dropdown icon"></i>-->
+                <!--<div class="menu">-->
+                    <!--<div class="item" data-value="1">College 1</div>-->
+                    <!--<div class="item" data-value="0">College 2</div>-->
+                <!--</div>-->
+            <!--</div>           -->
+        <!--</div>-->
+        <div class="field">
+            <h6 class="ui red header">
+                  <i class="marker icon"></i>
+                  <div class="content">
+                        Your Pick Up Location
+                  </div>
+            </h6>
+            <select id="address" name="address">
+                <option id="pickUpAddress" value="">Select Operating Point</option>
+            </select>
+        </div>
+</form>
+<div class="ui divider hidden"></div>
+
+<div id="dishWrapper" class="ui grid">
+    <div id="dishList" class="doubling two column row dishes">
+        Loading...
+    </div>
+</div>
+<div id="orderStats" class="ui segment">
+</div>
+<span id="timeAlert" class="ui yellow message" style="display:none"></span>
+<p id="orderMessage" class="ui small message">
+    We are early now! We guarantee your lunch will arrive before 12:00PM, please track your lunch and pick it up on your schedule. (no later than 12:30PM :P)
+</p>
+<button id="paymentBtn" class="ui red button-lg">
+    Checkout
+</button>
+
+<div id="inventoryExceededAlert" class="ui small test modal">
+    <div class="header" style="background-color: #ffffff" id="inventoryAlertTitle">
+        Oops!
+    </div>
+    <div class="content">
+        Sorry, someone has already placed the order before you, now the dish quantity is not enough for your order, please try other amounts or dishes.
+    </div>
+    <div class="actions">
+        <div class="one fluid ui buttons">
+            <div class="ui ok basic button">
+                <i class="checkmark icon"></i>
+                <label id="inventoryConfirm">OK</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--ClickMeter.com page views tracking: Home Page -->
+<script type='text/javascript'>
+var ClickMeter_pixel_url = '//pixel.watch/akdb';
+</script>
+<script type='text/javascript' id='cmpixelscript' src='//s3.amazonaws.com/scripts-clickmeter-com/js/pixelNew.js'></script>
+<noscript>
+    <img height='0' width='0' alt='' src='http://pixel.watch/akdb' />
+</noscript>

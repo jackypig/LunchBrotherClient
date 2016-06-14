@@ -1,0 +1,25 @@
+<% _.each(payments, function(payment) { %>
+      <tr id="div-<%= payment.orderNumber %>">
+          <td>
+              <div class="order-name">
+                  <%= payment.lastName %>, <%= payment.firstName %>
+              </div>
+              <div class="gray order-tel">
+                  <%= payment.telNum %>
+              </div>
+          </td>
+          <td><%= payment.orderSummary %></td>
+          <td><%= payment.orderNumber %></td>
+          <td>$<%= payment.totalPrice %></td>
+          <% if(payment.paid) { %>
+            <td style="color: green">Paid</td>
+          <% } else { %>
+            <td style="color: red">Not Paid</td>
+          <% } %>
+          <td>
+              <button id="checkButton-<%= payment.orderNumber %>" class="ui fluid icon button" data-order="<%= payment.orderNumber %>" data-lname="<%= payment.lastName %>" data-fname="<%= payment.firstName %>" data-price="<%= payment.totalPrice %>">
+                  <i class="check icon"></i>
+              </button>
+          </td>
+      </tr>
+<% })%>

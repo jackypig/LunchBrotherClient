@@ -1,0 +1,153 @@
+<h5 class="ui header">
+    <i class="help circle icon"></i>
+    Don't know where to pick up?
+</h5>
+<div class = "scroll-wrapper" id="youtubeDiv" align="center" frameborder="0" allowfullscreen>
+    <iframe id="youtubeFrame" src=""></iframe>
+</div>
+<div class="ui divider hidden"></div>
+<button id="payCashBtn" class="ui toggle orange button">
+    <i class="money icon"></i>
+    Pay Cash
+</button>
+<button id="payCardBtn" class="ui toggle button">
+    <i class="payment icon"></i>
+    Credit Card
+</button>
+<form action="" method="POST" id="paymentForm" class="ui form">
+    <div class="ui divider"></div>
+
+    <div id="cashInfo" class="ui segment">
+        <div class="ui medium header">Cash is cheaper and easier!</div>
+        <p>Your order total is: $<span id="cashPriceMessage"></span></p>
+        <div class="ui divider"></div>
+        <p>Pay cash when you pick up your order at selected location and enjoy the delicious food.</p>
+    </div>
+    <div id="cardInfo" class="ui segment hide">
+        <p>Your order total is: $<span id="cardPriceMessage"></span></p>
+        <% if(cards.length > 0){ %>
+        <div id="cardselector" class="grouped fields">
+
+            <div class="ui basic segment">
+                <h5 class="ui left floated header">
+                    Your cards:
+                </h5>
+
+                <div id="newCard" class="ui basic right floated button">
+                    <i class="icon payment"></i>
+                    Use Another Card
+                </div>
+
+            </div>
+            <div id="userCardList">
+                <% var count = 0; %>
+                <% _.each(cards, function(card){
+                var customerId = card.get('customerId');
+                var digit = card.get('last4Digit');%>
+                <div class="field">
+                    <div class="ui radio checkbox checked">
+                        <% if(count === 0){ %>
+                        <input type="radio" name="card" value="<%= customerId %>" checked >
+                        <% } else { %>
+                        <input type="radio" name="card" value="<%= customerId %>" >
+                        <% } %>
+                        <label>xxxx-xxxx-xxxx-<span><%= digit %></span>
+                        </label>
+                    </div>
+                </div>
+                <% count++; %>
+                <% }); %>
+            </div>
+            <div class="ui divider"></div>
+        </div>
+        <% } %>
+        <div id="newCardInfo" class="<%= cards.length > 0? 'transition hidden' : '' %>">
+            <div id="cardinfo" class="field">
+                <h5 id="inputCardInfo">Please input your credit card information:</h5>
+                <div class="sixteen wide field">
+                    <input class="ui fluid input card-number stripe-sensitive required" id="cardNumber" name="number" placeholder="card number" type="text" size="20" data-stripe="number" />
+                </div>
+            </div>
+            <div class="ui divider hidden"></div>
+            <div id="card-expinfo" class="fields">
+                <div id="exptime" class="ten wide field expiry-wrapper">
+                    <label id="expDate">Expiration Date:</label>
+                    <div class="two fields">
+                        <div class="field">
+                            <select id="expMonth" data-stripe="exp-month" name="expMonth" class="ui dropdown card-expiry-month stripe-sensitive required">
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+
+                        <div id="expyear" class="card-expyear field">
+                            <select id="expYear" data-stripe="exp-year" class="ui dropdown card-expiry-year stripe-sensitive required">
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="six wide field" id="cw2">
+                    <label id="cvv2VerificationCode">CVV2 Verification Code:</label>
+                    <input type="text" class="ui input card-cvc" data-stripe="cvc" size="4">
+                </div>
+            </div>
+            <div id="rememberme" class="inline field">
+                <input type="checkbox" name="rememberme">
+                <label for = "rememberme">Remember This Card</label>
+            </div>
+        </div>
+        <div id="agreements" class="two fields">
+            <div id="terms" class="required inline field">
+                <input type="checkbox" name="terms" id="termsInput">
+                <label for="terms">I agree to the terms and conditions</label>
+            </div>
+
+            <div id="termsandconditions" class="inline field">
+                <a id="readTermOfUse" href="#policy">Read terms and conditions</a>
+            </div>
+        </div>
+    </div>
+    <button id="orderBtn" type="submit" class="center aligned ui red button-lg">Place Order</button>
+    <span class="payment-errors"></span>
+</form>
+
+<div id="failPaymentDialog" class="ui small test modal">
+    <div class="header" style="background-color: #ffffff">
+        <label id="paymentFail">Payment Failed</label>
+    </div>
+    <div class="content">
+        <table width="100%">
+            <tr>
+                <td style="font-size: 12pt">
+                    <label id="failedReason">Reason of Failure:</label>
+                    <label id="paymentFailMessage"></label>
+                    <br>
+                    <label id="pleaseDoubleCheckOrder">Please double check card information and your order then try again.</label>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="actions">
+        <div class="one fluid ui buttons">
+            <div class="ui ok fluid button">
+                <label id="messageConfirm">OK</label>
+            </div>
+        </div>
+    </div>
+</div>

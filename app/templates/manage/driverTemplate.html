@@ -1,0 +1,32 @@
+<h3 class="ui center aligned header">Orders for Today</h3>
+<div class="ui segment">
+    <div class="ui vertical segment">
+        <div class="four wide left aligned column">Restaurant: <span id="resName"></span></div>
+        <div class="four wide left aligned column">Telephone: <span id="resNumber"></span></div>
+        <div class="four wide left aligned column">Address: <span id="resAddress"></span></div>
+        <div class="four wide left aligned column">Dish Quantity: <%= dishQuantitySummary %></div>
+    </div>
+</div>
+
+<button id="readyToGo" class="center aligned ui fluid red button">Orders picked up, ready to deliver!</button>
+<div class="ui divider"></div>
+<button id="done" class="center aligned ui fluid red button">I've finished delivering!</button>
+
+<div class="ui divider"></div>
+<h3 class="ui center aligned header">Today's Delivery Detail</h3>
+<div class="ui segment">
+    <div class="ui vertical segment">
+        <a href="#distributor" class="delivery-order">
+            <% _.each(orderByDps, function(orderByDp) { %>
+            <div class="ui column grid summary-list">
+                <div class="six wide right aligned column"><span class="summary-location"><%= orderByDp.address %></span></div>
+                <div class="six wide column left aligned">
+                    <span class="summary-status">
+                        <%= orderByDp.dishLabel %>
+                    </span>
+                </div>
+            </div>
+            <% }) %>
+        </a>
+    </div>
+</div>

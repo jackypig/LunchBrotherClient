@@ -1,0 +1,965 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+/* line 27, ../sass/global/_variable.scss */
+#orderBtn.red, .ui.red.button-lg, .ui.button-lg.grey, .ui.button-lg.orange, #resetBtn.red {
+  box-shadow: 0 -0.3em 0 0 rgba(39, 41, 43, 0.15) inset;
+  padding: 1em 2em 1.35em;
+  width: 100%;
+  position: relative;
+  color: white;
+  border: none;
+}
+/* line 35, ../sass/global/_variable.scss */
+#orderBtn.red:hover, .ui.red.button-lg:hover, .ui.button-lg.grey:hover, .ui.button-lg.orange:hover, #resetBtn.red:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px;
+}
+/* line 40, ../sass/global/_variable.scss */
+#orderBtn.red:active, .ui.red.button-lg:active, .ui.button-lg.grey:active, .ui.button-lg.orange:active, #resetBtn.red:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px;
+}
+
+/* line 50, ../sass/global/_variable.scss */
+#orderBtn.grey {
+  background-color: #dddddd;
+  box-shadow: 0 -0.3em 0 0 rgba(39, 41, 43, 0.15) inset;
+  color: #9b9b9b;
+  padding: 1em 2em 1.35em;
+  width: 100%;
+  position: relative;
+}
+
+/* line 62, ../sass/global/_variable.scss */
+#signupReminder, #copyright {
+  font-size: 12px;
+  text-align: center;
+  margin: 10px;
+  color: #9b9b9b;
+}
+
+/* line 5, ../../../../../../../Users/Qing/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../Users/Qing/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../Users/Qing/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../Users/Qing/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../Users/Qing/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../Users/Qing/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../Users/Qing/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../Users/Qing/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../Users/Qing/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 3, ../sass/partials/_sidebar.scss */
+.savebtn {
+  padding: 5px 9px;
+  background: #d95c5c;
+  font-size: 0.8em;
+  cursor: pointer;
+  color: #fff;
+  @box-shadow :inset 0 1px 0 #8a9cc2;
+  float: right;
+  display: none;
+}
+
+/* line 14, ../sass/partials/_sidebar.scss */
+.savebtn:hover {
+  color: #fff;
+  background: #e3151a;
+  text-decoration: none;
+}
+
+/* line 15, ../sass/partials/_sidebar.scss */
+.savebtn:active {
+  background: #d95c5c;
+}
+
+/* line 17, ../sass/partials/_sidebar.scss */
+.profileinfo {
+  background: #f2f2f2;
+  width: 100%;
+  padding: 4px 10px;
+  border-left: 1px solid #b3b3b3;
+  border-right: 1px solid #b3b3b3;
+  border-bottom: 1px solid #b3b3b3;
+}
+
+/* line 18, ../sass/partials/_sidebar.scss */
+.profileinfo h2 {
+  position: relative;
+  left: -250px;
+}
+
+/* line 20, ../sass/partials/_sidebar.scss */
+.gear {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #efefef;
+}
+
+/* line 27, ../sass/partials/_sidebar.scss */
+.gear a.editlink {
+  float: right;
+  font-size: 12px;
+}
+
+/* line 33, ../sass/partials/_sidebar.scss */
+.datainfo {
+  float: left;
+  font-size: 12px;
+  color: #333;
+}
+
+/* line 39, ../sass/partials/_sidebar.scss */
+#accountBalance .label {
+  display: inline-block;
+  color: #9b9b9b;
+  font-size: 12px;
+  font-weight: 100;
+  width: 100px;
+}
+
+/* line 46, ../sass/partials/_sidebar.scss */
+.hlite {
+  background: #efefef;
+  border: 1px solid #bdc7d8;
+  width: 160px;
+  padding: 4px 7px;
+  color: #565656;
+  font-size: 12px;
+}
+
+/* line 55, ../sass/partials/_sidebar.scss */
+.sidebar-item {
+  font-size: 12px;
+  float: left;
+  width: 100%;
+}
+
+/* line 62, ../sass/partials/_sidebar.scss */
+.item-text {
+  float: left;
+  margin-left: 8px;
+}
+
+/* line 1, ../sass/partials/_dish.scss */
+.dishes .card {
+  width: 100%;
+}
+
+/* line 6, ../sass/partials/_dish.scss */
+.ui .card {
+  -moz-box-shadow: 0 0.1em 0.3em 0 #d4d4d5;
+  -webkit-box-shadow: 0 0.1em 0.3em 0 #d4d4d5;
+  box-shadow: 0 0.1em 0.3em 0 #d4d4d5;
+}
+/* line 8, ../sass/partials/_dish.scss */
+.ui .card .image {
+  overflow: hidden;
+  background-position: center center;
+  background-size: cover;
+}
+/* line 13, ../sass/partials/_dish.scss */
+.ui .card .price-hint {
+  font-size: 0.6rem;
+  color: #1CBC9C;
+  text-transform: none;
+  padding-left: 5px;
+}
+
+/* line 21, ../sass/partials/_dish.scss */
+#weeklyMenu .card .image {
+  height: 120px;
+}
+
+/* line 25, ../sass/partials/_dish.scss */
+#dishList .card .image {
+  height: 240px;
+}
+
+/* line 29, ../sass/partials/_dish.scss */
+#page {
+  padding-top: 32px;
+  /* Transform Translate Mixin */
+}
+/* line 30, ../sass/partials/_dish.scss */
+#page .dimmer {
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+/* line 33, ../sass/partials/_dish.scss */
+#page .dimmer .dimmer-content {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 38, ../sass/partials/_dish.scss */
+#page .dish-desc {
+  font-size: 1.2rem;
+  padding-left: 10px;
+  color: #454545;
+}
+/* line 43, ../sass/partials/_dish.scss */
+#page .minus-btn-wrapper {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 46, ../sass/partials/_dish.scss */
+#page .minus-btn-wrapper button {
+  border: 1px solid #9b9b9b;
+}
+/* line 50, ../sass/partials/_dish.scss */
+#page .plus-btn-wrapper {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 53, ../sass/partials/_dish.scss */
+#page .plus-btn-wrapper button {
+  border: 1px solid #9b9b9b;
+}
+/* line 57, ../sass/partials/_dish.scss */
+#page .order-count-wrapper {
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+/* line 61, ../sass/partials/_dish.scss */
+#page .dish-count {
+  background-color: white;
+  border: 1px solid #9b9b9b;
+  width: 100%;
+  padding: 7px 11px;
+  font-weight: normal;
+}
+/* line 68, ../sass/partials/_dish.scss */
+#page .img-overlay {
+  position: absolute;
+  height: 40px;
+  width: 100%;
+  bottom: 0;
+  background: rgba(242, 155, 48, 0.9);
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-top: 0.8rem;
+}
+/* line 84, ../sass/partials/_dish.scss */
+#page .card .content .ui.button {
+  font-size: 0.7rem;
+}
+/* line 89, ../sass/partials/_dish.scss */
+#page .ui.pointing.secondary.menu
+.item {
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #9b9b9b;
+  width: 50%;
+  border-radius: 0;
+}
+/* line 98, ../sass/partials/_dish.scss */
+#page .ui.pointing.secondary.menu
+.item:hover {
+  color: #9b9b9b;
+}
+/* line 102, ../sass/partials/_dish.scss */
+#page .active.item {
+  border-left: none;
+  border-color: #e3151a;
+}
+/* line 107, ../sass/partials/_dish.scss */
+#page .dishinfo .item {
+  color: #9b9b9b;
+  font-size: 0.8rem;
+}
+/* line 125, ../sass/partials/_dish.scss */
+#page .header-week {
+  position: relative;
+  display: block;
+  margin: 30px auto;
+  width: 100%;
+  text-align: center;
+}
+/* line 131, ../sass/partials/_dish.scss */
+#page .header-week:before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background-color: #f7f7f7;
+}
+/* line 144, ../sass/partials/_dish.scss */
+#page .header-week:after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  top: 47px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: #FBBD08;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+/* line 159, ../sass/partials/_dish.scss */
+#page .header-week:hover:after {
+  width: 50px;
+}
+/* line 167, ../sass/partials/_dish.scss */
+#page .menu-dishinfo .content, #page .dishinfo .content {
+  font-size: 0.8rem;
+}
+/* line 169, ../sass/partials/_dish.scss */
+#page .menu-dishinfo .content .green, #page .dishinfo .content .green {
+  color: #1CBC9C;
+}
+/* line 172, ../sass/partials/_dish.scss */
+#page .menu-dishinfo .content .yellow, #page .dishinfo .content .yellow {
+  color: #FBBD08;
+}
+/* line 178, ../sass/partials/_dish.scss */
+#page .tab-dish-detail {
+  border: none;
+  margin-bottom: 0 !important;
+}
+/* line 183, ../sass/partials/_dish.scss */
+#page .dish-detail {
+  line-height: 1.2;
+}
+/* line 186, ../sass/partials/_dish.scss */
+#page .dish-intro {
+  font-size: 0.8rem;
+  color: #9b9b9b;
+}
+/* line 190, ../sass/partials/_dish.scss */
+#page .dish-ingredients {
+  font-size: 0.6rem;
+  color: #9b9b9b;
+  margin-top: 15px;
+}
+/* line 194, ../sass/partials/_dish.scss */
+#page .dish-ingredients .header {
+  color: #454545;
+}
+/* line 198, ../sass/partials/_dish.scss */
+#page .restaurantInfo {
+  font-size: 0.8rem;
+  color: #9b9b9b;
+}
+/* line 201, ../sass/partials/_dish.scss */
+#page .restaurantInfo .header {
+  color: #454545;
+  font-size: 1rem;
+}
+/* line 207, ../sass/partials/_dish.scss */
+#page .extra.content.horizontal.segments {
+  padding: 0;
+}
+/* line 209, ../sass/partials/_dish.scss */
+#page .extra.content.horizontal.segments span {
+  width: 100%;
+  text-align: center;
+}
+
+/* line 3, ../sass/partials/_home.scss */
+.column {
+  padding-bottom: 1rem;
+}
+
+/* line 7, ../sass/partials/_home.scss */
+.summary-name {
+  font-size: 12px;
+  color: #9b9b9b;
+}
+
+/* line 12, ../sass/partials/_home.scss */
+.summary-count {
+  font-size: 12px;
+  color: #9b9b9b;
+}
+
+/* line 16, ../sass/partials/_home.scss */
+.summary-price {
+  font-size: 12px;
+  color: #9b9b9b;
+}
+
+/* line 20, ../sass/partials/_home.scss */
+.summary-total {
+  font-size: 12px;
+  color: #9b9b9b;
+  display: inline-block;
+  color: #E3151E;
+}
+
+/* line 26, ../sass/partials/_home.scss */
+.summary-tax {
+  font-size: 12px;
+  color: #9b9b9b;
+  display: inline-block;
+  width: 40px;
+}
+
+/* line 32, ../sass/partials/_home.scss */
+.summary-coupon {
+  font-size: 12px;
+  color: #9b9b9b;
+  display: inline-block;
+  width: 40px;
+  color: #5bbd72;
+}
+
+/* line 39, ../sass/partials/_home.scss */
+.summary-location {
+  color: #454545;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+/* line 44, ../sass/partials/_home.scss */
+.summary-status {
+  color: #A3A3A3;
+  font-size: 11px;
+}
+
+/* line 48, ../sass/partials/_home.scss */
+.summary-contact {
+  color: #A3A3A3;
+  font-size: 11px;
+}
+
+/* line 52, ../sass/partials/_home.scss */
+.summary-total-label {
+  font-size: 12px;
+}
+
+/* line 55, ../sass/partials/_home.scss */
+.summary-tax-label {
+  font-size: 12px;
+}
+
+/* line 58, ../sass/partials/_home.scss */
+.summary-coupon-label {
+  font-size: 12px;
+}
+
+/* line 61, ../sass/partials/_home.scss */
+#timeAlert {
+  display: none;
+}
+
+/* line 67, ../sass/partials/_home.scss */
+#orderBtn.red:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px;
+}
+/* line 72, ../sass/partials/_home.scss */
+#orderBtn.red:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px;
+}
+
+/* line 1, ../sass/partials/_manage.scss */
+.desc-line {
+  color: #9b9b9b;
+  font-size: 0.8rem;
+  padding-top: 5px;
+}
+
+/* line 7, ../sass/partials/_manage.scss */
+#menuList {
+  padding: 0 1.2em;
+}
+/* line 9, ../sass/partials/_manage.scss */
+#menuList .item {
+  padding: 10px 0;
+  border-top: none;
+  border-bottom: 1px solid rgba(34, 36, 38, 0.15);
+}
+/* line 14, ../sass/partials/_manage.scss */
+#menuList .item .ui.grid.content {
+  color: #9b9b9b;
+  font-size: 0.8rem;
+  padding: 0 10px;
+}
+/* line 18, ../sass/partials/_manage.scss */
+#menuList .item .ui.grid.content .column {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/* line 24, ../sass/partials/_manage.scss */
+#menuList .header {
+  line-height: 37px;
+}
+
+/* line 29, ../sass/partials/_manage.scss */
+.original-price {
+  font-size: 0.8rem;
+  color: #9b9b9b;
+}
+
+/* line 34, ../sass/partials/_manage.scss */
+#restaurant-selector-edit {
+  padding-left: 0;
+}
+
+/* line 39, ../sass/partials/_manage.scss */
+.order-name {
+  font-weight: 700;
+}
+
+/* line 43, ../sass/partials/_manage.scss */
+.order-tel {
+  font-size: 0.8rem;
+  padding-top: 5px;
+}
+
+/* line 1, ../sass/partials/_video.scss */
+.scroll-wrapper {
+  width: 100%;
+  position: relative;
+  height: 0;
+  padding-top: 35px;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+/* line 8, ../sass/partials/_video.scss */
+.scroll-wrapper iframe {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* line 20, ../sass/screen.scss */
+.default.text {
+  color: #e3151a;
+}
+
+/* line 25, ../sass/screen.scss */
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f7f7f7;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* line 32, ../sass/screen.scss */
+body {
+  height: auto !important;
+  min-height: 100%;
+}
+
+/* line 37, ../sass/screen.scss */
+header {
+  min-width: 320px;
+}
+/* line 40, ../sass/screen.scss */
+header .brand.item img {
+  width: 1.5em;
+  padding: 0 7px;
+}
+
+/* line 47, ../sass/screen.scss */
+.hide {
+  display: none !important;
+}
+
+/* line 51, ../sass/screen.scss */
+.space {
+  width: 100%;
+  clear: both;
+  height: 100px;
+}
+
+/* line 56, ../sass/screen.scss */
+#today {
+  margin-top: 4px;
+  font-weight: normal;
+  width: 33.33%;
+}
+
+/* line 61, ../sass/screen.scss */
+#barTitle {
+  width: 31%;
+  text-align: center;
+  float: left;
+}
+
+/* line 66, ../sass/screen.scss */
+#hamBtnWrapper {
+  text-align: right;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* line 70, ../sass/screen.scss */
+#hamBtnWrapper > div {
+  margin: 0;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  width: 40%;
+}
+
+/* line 79, ../sass/screen.scss */
+#language {
+  display: inline-block;
+}
+
+/* line 82, ../sass/screen.scss */
+.language-text {
+  float: left;
+}
+
+/* line 86, ../sass/screen.scss */
+.ui.red.button-lg {
+  background-color: #e3151a;
+}
+
+/* line 91, ../sass/screen.scss */
+.ui.button-lg.grey {
+  background-color: #9b9b9b;
+}
+
+/* line 95, ../sass/screen.scss */
+.ui.button-lg.orange {
+  background-color: #f2711c;
+}
+
+/* line 103, ../sass/screen.scss */
+#loginBtnContent.grey {
+  color: #9b9b9b;
+}
+/* line 106, ../sass/screen.scss */
+#loginBtnContent.red {
+  color: white;
+}
+
+/* line 110, ../sass/screen.scss */
+.notification {
+  margin-top: 30px;
+}
+
+/* line 113, ../sass/screen.scss */
+#orderMessage {
+  box-shadow: none;
+  background: none;
+  font-size: 12px;
+  color: #9b9b9b;
+  padding: 20px 0 20px 0 !important;
+  margin: 0 !important;
+}
+/* line 121, ../sass/screen.scss */
+#orderMessage a {
+  color: #E3151E;
+}
+
+/* line 125, ../sass/screen.scss */
+#statusTracker {
+  font-size: 12px;
+}
+
+/* line 128, ../sass/screen.scss */
+#payment {
+  padding: 15px;
+}
+
+/* line 131, ../sass/screen.scss */
+#addressOption {
+  min-width: 150px;
+  margin-left: 2%;
+}
+/* line 134, ../sass/screen.scss */
+#addressOption .default {
+  float: left;
+  width: 75%;
+  text-shadow: 0.5px -0.5px white;
+}
+/* line 140, ../sass/screen.scss */
+#addressOption .dropdown.icon {
+  margin-bottom: 10px;
+}
+
+/* line 144, ../sass/screen.scss */
+#expyear {
+  min-width: 150px;
+}
+
+/* line 147, ../sass/screen.scss */
+.check {
+  width: 85%;
+  margin-left: 20px;
+}
+
+/* line 151, ../sass/screen.scss */
+.thanks {
+  color: #E3151A;
+}
+
+/* line 154, ../sass/screen.scss */
+#customerinfo {
+  padding: 10px;
+}
+
+/* line 157, ../sass/screen.scss */
+.order-detail {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* line 162, ../sass/screen.scss */
+#orderStats .column {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* line 166, ../sass/screen.scss */
+#orderStats .summary-list {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* line 171, ../sass/screen.scss */
+#inputCardInfo {
+  display: block;
+  margin: 0 0 .2857rem;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: .9285em;
+  font-weight: 700;
+  text-transform: none;
+}
+
+/* line 181, ../sass/screen.scss */
+#newCardInfo {
+  transform: none;
+  margin: 2%;
+}
+
+/* line 186, ../sass/screen.scss */
+#contactinfo {
+  margin: 2%;
+}
+
+/* line 189, ../sass/screen.scss */
+#agreements {
+  margin: 2%;
+}
+
+/* line 192, ../sass/screen.scss */
+#basicinfo {
+  margin: 2%;
+}
+
+/* line 195, ../sass/screen.scss */
+#cardselector {
+  margin: 2%;
+}
+
+/* line 198, ../sass/screen.scss */
+#fullscreen {
+  display: none;
+}
+
+/* line 201, ../sass/screen.scss */
+#smallmap {
+  width: 100%;
+}
+
+/* line 204, ../sass/screen.scss */
+.arrived {
+  color: #e3151a;
+}
+
+/* line 207, ../sass/screen.scss */
+#loginorsignup {
+  margin-top: 0;
+}
+
+/* line 210, ../sass/screen.scss */
+#logo {
+  text-align: center;
+}
+
+@media (max-width: 736px) {
+  /* line 214, ../sass/screen.scss */
+  #img {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 736px) {
+  /* line 220, ../sass/screen.scss */
+  #img {
+    width: 50%;
+    height: 50%;
+  }
+}
+/* line 225, ../sass/screen.scss */
+#signupReminder {
+  font-size: 15px;
+  color: #9b9b9b;
+  text-align: center;
+  margin: 10px;
+}
+
+/* line 235, ../sass/screen.scss */
+.profilePic {
+  border-radius: 100%;
+  overflow: hidden;
+  box-sizing: content-box;
+  margin: 0 auto;
+  border: 5px solid #f7f7f7;
+  width: 90px;
+  height: 90px;
+}
+
+/* line 246, ../sass/screen.scss */
+#userFullName {
+  margin: 15px 0;
+  color: #e3151a;
+  font-weight: bold;
+}
+
+/* line 251, ../sass/screen.scss */
+#referlink {
+  margin: 0 auto;
+}
+
+/* line 254, ../sass/screen.scss */
+#forgotlink {
+  font-size: 14px;
+  float: right;
+}
+
+/* line 258, ../sass/screen.scss */
+#sidebarWrapper {
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+}
+
+/* line 262, ../sass/screen.scss */
+.ui.inverted.menu {
+  background-color: #E3151A;
+  opacity: 0.9;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+/* line 268, ../sass/screen.scss */
+.ui.inverted.menu.bottom .item-left {
+  display: block;
+  font-size: 0.6em;
+}
+/* line 272, ../sass/screen.scss */
+.ui.inverted.menu.bottom .item-left .icon {
+  display: block;
+  text-align: center;
+  height: 1em;
+  margin: 0 auto 0.5em;
+  font-size: 1.8em;
+}
+
+/* line 281, ../sass/screen.scss */
+.dishes .card {
+  width: 100%;
+}
+
+/* line 287, ../sass/screen.scss */
+#resetBtn.red:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px;
+}
+/* line 292, ../sass/screen.scss */
+#resetBtn.red:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px;
+}
+
+/* line 299, ../sass/screen.scss */
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+/* line 306, ../sass/screen.scss */
+#termsandconditions > a {
+  padding-left: 8%;
+}
+
+/* line 310, ../sass/screen.scss */
+.college-selector {
+  color: rgba(0, 0, 0, 0.95) !important;
+}
+/* line 312, ../sass/screen.scss */
+.college-selector .default.text {
+  color: rgba(0, 0, 0, 0.95) !important;
+}

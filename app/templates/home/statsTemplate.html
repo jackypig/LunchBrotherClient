@@ -1,0 +1,20 @@
+<div class="ui vertical segment">
+	<h2 id="orderDetails" style="padding:1px 0 0;" class="ui header small">Your Order Summary:</h2>
+	<% _.each(orders, function(order) { %>
+	<div class="ui column grid summary-list">
+		<div class="eight wide column">
+			<span class="summary-name"> <%= order.name %> </span>
+		</div>
+		<div class="four wide column right aligned">
+			<span class="summary-count"> <%= order.count %> </span>
+		</div>
+		<div class="four wide column right aligned">
+			<span class="summary-price">$<%= (order.price * order.count).toFixed(2) %> ($<%= (order.cashPrice * order.count).toFixed(2) %>)</span>
+		</div>
+	</div>
+	<% }); %>
+</div>
+<div class="ui vertical segment right aligned">
+	<strong class="summary-total-label">Total:</strong>
+	<span class="summary-total">$<%= totalCharge %> ($<%= totalCashCharge %>)</span>
+</div>

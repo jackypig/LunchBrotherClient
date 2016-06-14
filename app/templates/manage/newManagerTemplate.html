@@ -1,0 +1,51 @@
+<h1 class="ui small center aligned header" id="managerDetailPageTitle"></h1>
+<form class="ui form">
+    <div class="field">
+        <label>E-mail/Username</label>
+        <input type="email" id="manager-email" name="manager-email" placeholder="joe@schmoe.com" value="<%= manager.get('email') %>">
+    </div>
+    <div class="field">
+        <label>Password</label>
+        <input type="password" id="manager-password" name="manger-password" value="<%= manager.get('password') %>">
+    </div>
+    <div class="field">
+        <label>Name</label>
+        <div class="two fields">
+            <div class="field">
+                <input type="text" id="manager-first-name" name="manager-first-name" placeholder="First Name" value="<%= manager.get('firstName') %>">
+            </div>
+            <div class="field">
+                <input type="text" id="manager-last-name" name="manager-last-name" placeholder="Last Name" value="<%= manager.get('lastName') %>">
+            </div>
+        </div>
+    </div>
+    <div class="field">
+        <label>Phone number</label>
+        <input type="tel" id="manager-telnum" name="manger-telnum" placeholder="e.g. 3018259878" value="<%= manager.get('telnum') %>">
+    </div>
+    <div class="ui action input manager-photo-upload">
+        <input type="file" id="managerPhoto" name="managerPhoto" accept="image/*">
+    </div>
+    <div class="ui divider hidden"></div>
+    <% if(manager.get('imageFile') != null) { %>
+    <div class="managerPhotoPreviewRow">
+        <img class="thumb" src="<%= manager.get('imageFile')._url %>" style="width: 200px"/>
+    </div>
+    <% } %>
+
+    <div class="field">
+        <label>Location</label>
+        <div class="ui fluid search selection dropdown manager-location-select">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select manager's location</div>
+            <div class="menu">
+                <% _.each(grids, function(grid){ %>
+                <div class="item" data-value="<%= grid.id %>"><%= grid.get('name') %></div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="ui divider hidden"></div><button class="center aligned ui red button save-manager-btn">Save this manager</button>
+<button class="center aligned ui grey button" onclick="location.href='#managerList'">Cancel</button>
+

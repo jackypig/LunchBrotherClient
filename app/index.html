@@ -1,0 +1,166 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+    <html class="no-js" lang="en">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0, user-scalable=0">
+        <title>Lunchbrother</title>
+        <!-- 2. Include CSS -->
+        <link rel="icon" type="image/png" href="img/favicon.png">
+        <link rel="stylesheet" href="js/libs/semantic_2.0/semantic.min.css" type="text/css" />
+        <link rel="stylesheet" href="js/libs/semantic_2.0/components/dropdown.min.css" type="text/css" />
+        <link rel="stylesheet" href="js/libs/semantic_2.0/components/icon.min.css" type="text/css" />
+        <link rel="stylesheet" href="js/libs/semantic_2.0/components/label.min.css" type="text/css" />
+        <link rel="stylesheet" href="js/libs/semantic_2.0/components/form.min.css" type="text/css" />
+        <link rel="stylesheet" href="js/libs/semantic_2.0/components/input.min.css" type="text/css" />
+        <link rel="stylesheet" href="js/libs/semantic_2.0/components/sidebar.min.css" type="text/css" />
+        <link rel="stylesheet" href="stylesheets/screen.css">
+        <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+        <link rel="stylesheet" href="js/libs/jquery-ui-1.11.4.custom/themes/smoothness/jquery-ui.min.css" type="text/css" />
+    </head>
+    <body>
+        <div id="accountBar" class="ui right vertical push sidebar menu">
+            <div id="sidebarWrapper" class="ui grid">
+                <div class="row">
+                    <div class="ui divider hidden"></div>
+                    <div class="sixteen wide column center aligned">
+                        <div class="profilePic clear">
+                            <img id="userImage" width="150px" alt="Anne Hathaway picture" src="img/account_placeholder.JPG">
+                        </div>
+                        <p class="user-name" id="userFullName"></p>
+                        <div class="ui divider"></div>
+			<!--
+                        <div id="referlink" class="ui fluid input">
+                            <input class="refer" type="text" readonly="readonly" value="">
+                        </div>
+                        <div class="ui red icon small message">
+                            <i class="tag icon"></i>
+                            <div class="content">
+                                <div class="header">
+                                    Get $10 now!
+                                </div>
+                                <p>Just send the invitation link to your friends!</p>
+                            </div>
+                        </div>
+			-->
+                 	<!--
+                        <div class="ui horizontal mini statistics">
+                            <div id="accountBalance" class="statistic">
+                                <div class="value">
+                                <span id="userCreditBalance"><i class="dollar icon"></i> </span>
+                                </div>
+                                <div class="label">
+                                    $3 off on every single order!
+                                </div>
+                            </div>
+                        </div>
+	                -->
+                        <div class="ui divider hidden"></div>
+                        <div class="gear clearfix">
+                            <span id="userEmail" class="datainfo"><i class="mail icon"></i></span>
+                            <a href="#" class="editlink">Edit</a>
+                            <a class="savebtn">
+                                Save
+                            </a>
+                        </div>
+
+                        <div class="gear clearfix">
+                            <span id="userPhone" class="datainfo"><i class="mobile icon"></i></span>
+                            <a href="#" class="editlink">Edit</a>
+                            <a class="savebtn">
+                                Save
+                            </a>
+                        </div>
+                        <div class="gear clearfix">
+                            <span id="userGrid" class="datainfo"><i class="university icon"></i></span>
+                        </div>
+                        <div  class="gear sidebar-item clearfix">
+                            <input type="checkbox" class="datainfo" id="smsCheckbox" >
+                            <label class="item-text">Send Me SMS</label>
+                        </div>
+                        <div class="ui divider hidden"></div>
+
+                        <div id="signOutBtn" class="ui basic button">
+                            <i class="icon sign out"></i>Sign Out
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pusher">
+            <header class="ui grid">
+                <div class="row">
+                    <div  class="ui fixed inverted navbar menu">
+                        <a href="#landing" class="brand item">
+                            <img src="img/logo-white.png">
+                            Lunchbrother
+                        </a>
+                        <div class="right menu">
+                            <a id="account" class="item" style="display: none">Hi, <span id="accountBarFirstName"></span><i class="user icon"></i>
+                            </a>
+                            <a id="accountSignup" href="#signupemail" class="item" style="display: none"><i class="add user icon"></i>Sign Up</a>  
+                         
+                            <a id="accountLogin" href="#login" class="item" style="display: none"><i class="sign in icon"></i>Login</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section class="ui grid main page">
+                <div class="row">
+                    <div class="column">
+                        <article id="page">
+                            Loading....
+                        </article>
+                    </div>
+                </div>
+            </section>
+        <div class="space"></div>
+        </div>
+
+        <div class="ui bottom fixed inverted menu navbar page grid">
+                <a id="bottom-bar-order" href="#home" class="item item-left" style="display: none">
+                    <i class="shop icon"></i>
+                    Order
+                </a>
+                <a id="bottom-bar-tracking" href="#status" class="item item-left" style="display: none">
+                    <i class="shipping icon"></i>
+                    Track
+                </a>
+                <a id="bottom-bar-manager" href="#managerHome?week=&dp=" class="item item-left" style="display: none">
+                    <i class="sitemap icon"></i>
+                    Manage
+                </a>
+                <a id="bottom-bar-admin" href="#admin" class="item item-left" style="display: none">
+                    <i class="setting icon"></i>
+                    LB Admin
+                </a>
+                <a id="bottom-bar-menu" href="#landing" class="item item-left">
+                    <i class="list layout icon"></i>
+                    Menu
+                </a>
+
+                <!-- 4. Markup for the language selection tool (this is where the localization widget will appear) -->
+        </div>
+
+        <div id="alertDialog" class="ui small test modal">
+            <div class="header" style="background-color: #ffffff" id="alertTitle"></div>
+            <div class="content" id="alertMessage"></div>
+            <div class="actions">
+                <div class="one fluid ui buttons">
+                    <div class="ui ok basic button">
+                        <i class="checkmark icon"></i>
+                        <label>OK</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script data-main="js/app" src="js/libs/require/require.min.js"></script>
+      </body>
+    </html>

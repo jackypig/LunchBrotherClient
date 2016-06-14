@@ -1,0 +1,404 @@
+#orderBtn.red, #loginBtn.red, #arriveBtn.red, #paymentBtn.red, #signUpBtn.red, #sendemailBtn.red, #resetBtn.red {
+  background-color: #e3151a;
+  box-shadow: 0 -0.3em 0 0 rgba(39, 41, 43, 0.15) inset;
+  padding: 1em 2em 1.35em;
+  width: 100%;
+  position: relative; }
+
+#orderBtn.grey, #loginBtn.grey {
+  background-color: #dddddd;
+  box-shadow: 0 -0.3em 0 0 rgba(39, 41, 43, 0.15) inset;
+  color: #888888;
+  padding: 1em 2em 1.35em;
+  width: 100%;
+  position: relative; }
+
+#signupReminder, #copyright {
+  font-size: 12px;
+  text-align: center;
+  margin: 10px;
+  color: #888888; }
+
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f7f7f7; }
+
+header {
+  min-width: 320px; }
+
+#mobileLanguage {
+  font-size: 12px; }
+
+.space {
+  width: 100%;
+  clear: both;
+  height: 100px; }
+
+#today {
+  margin-top: 4px;
+  font-weight: normal;
+  width: 33.33%; }
+
+#barTitle {
+  width: 31%;
+  text-align: center;
+  float: right; }
+
+#hamBtnWrapper {
+  text-align: right;
+  width: 33.33%;
+  padding: 0; }
+  #hamBtnWrapper > div {
+    margin: 0;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    width: 40%; }
+
+#language {
+  display: inline-block; }
+
+.language-text {
+  float: left; }
+
+#page {
+  padding-top: 32px; }
+  #page .dish-desc {
+    font-size: 12px;
+    padding-left: 10px;
+    color: #888888; }
+  #page .minus-btn-wrapper {
+    padding-left: 0;
+    padding-right: 0; }
+    #page .minus-btn-wrapper button {
+      border: 1px solid #888888; }
+  #page .plus-btn-wrapper {
+    padding-left: 0;
+    padding-right: 0; }
+    #page .plus-btn-wrapper button {
+      border: 1px solid #888888; }
+  #page .order-count-wrapper {
+    padding-left: 0.6em;
+    padding-right: 0.6em; }
+  #page .dish-count {
+    background-color: white;
+    border: 1px solid #888888;
+    width: 100%;
+    padding: 7px 11px;
+    font-size: 12px;
+    font-weight: normal; }
+  #page .ui.segment {
+    padding: 0.4em; }
+  #page .card .content .ui.button {
+    font-size: 0.7rem; }
+
+.summary-name {
+  font-size: 12px;
+  color: #888888; }
+
+.summary-count {
+  font-size: 12px;
+  color: #888888; }
+
+.summary-price {
+  font-size: 12px;
+  color: #888888; }
+
+.summary-total {
+  font-size: 12px;
+  color: #888888;
+  display: inline-block;
+  width: 40px;
+  color: #E3151E; }
+
+.summary-tax {
+  font-size: 12px;
+  color: #888888;
+  display: inline-block;
+  width: 40px; }
+
+.summary-coupon {
+  font-size: 12px;
+  color: #888888;
+  display: inline-block;
+  width: 40px;
+  color: #5bbd72; }
+
+.summary-location {
+  color: #454545;
+  font-weight: bold;
+  font-size: 11px; }
+
+.summary-status {
+  color: #A3A3A3;
+  font-size: 11px; }
+
+.summary-contact {
+  color: #A3A3A3;
+  font-size: 11px; }
+
+.summary-total-label {
+  font-size: 12px; }
+
+.summary-tax-label {
+  font-size: 12px; }
+
+.summary-coupon-label {
+  font-size: 12px; }
+
+#timeAlert {
+  display: none; }
+
+#orderBtn.red:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px; }
+#orderBtn.red:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px; }
+
+#loginBtn.red:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px; }
+#loginBtn.red:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px; }
+#loginBtn.grey:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px; }
+#loginBtn.grey:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px; }
+
+#arriveBtn {
+  box-shadow: 0 -0.3em 0 0 rgba(39, 41, 43, 0.15) inset;
+  padding: 1em 2em 1.35em;
+  width: 100%;
+  position: relative; }
+  #arriveBtn.red:hover {
+    box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+    top: 1px; }
+  #arriveBtn.red:active {
+    box-shadow: 0 0 #ab3c3c;
+    top: 2px; }
+
+#fbLoginBtn {
+  box-shadow: 0 -0.3em 0 0 rgba(39, 41, 43, 0.15) inset;
+  padding: 1em 2em 1.35em;
+  width: 100%;
+  position: relative; }
+  #fbLoginBtn:hover {
+    box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+    top: 1px; }
+  #fbLoginBtn:active {
+    box-shadow: 0 0 #ab3c3c;
+    top: 2px; }
+
+#loginBtnContent.grey {
+  color: #888888; }
+#loginBtnContent.red {
+  color: white; }
+
+.notification {
+  margin-top: 30px; }
+
+#orderMessage {
+  box-shadow: none;
+  background: none;
+  font-size: 12px;
+  color: #888888;
+  padding: 20px 0 20px 0 !important;
+  margin: 0 !important; }
+  #orderMessage a {
+    color: #E3151E; }
+
+#statusTracker {
+  font-size: 12px; }
+
+#payment {
+  padding: 15px; }
+
+#addressOption {
+  min-width: 150px;
+  margin-left: 2%; }
+  #addressOption .default {
+    float: left;
+    width: 75%;
+    text-shadow: 0.5px -0.5px white; }
+  #addressOption .dropdown.icon {
+    margin-bottom: 10px; }
+
+#expyear {
+  min-width: 150px; }
+
+.check {
+  width: 85%;
+  margin-left: 20px; }
+
+.thanks {
+  color: #E3151A; }
+
+#customerinfo {
+  padding: 10px; }
+
+.order-detail {
+  border: 1px solid rgba(0, 0, 0, 0.15); }
+
+.send {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  line-height: 50px;
+  background: #E3151A !important;
+  height: 78px; }
+  .send:hover {
+    opacity: 0.8; }
+  .send i {
+    color: white;
+    margin: 0 auto;
+    width: 100%; }
+
+.red {
+  color: #E3151A; }
+
+.gray {
+  color: #888888; }
+
+#orderStats .column {
+  padding-top: 0;
+  padding-bottom: 0; }
+#orderStats .summary-list {
+  margin-bottom: 0;
+  margin-top: 0; }
+
+#newCardInfo {
+  transform: none;
+  margin: 2%; }
+
+#contactinfo {
+  margin: 2%; }
+
+#agreements {
+  margin: 2%; }
+
+#basicinfo {
+  margin: 2%; }
+
+#cardselector {
+  margin: 2%; }
+
+#cw2 {
+  max-width: 160px !important; }
+
+#fullscreen {
+  display: none; }
+
+#smallmap {
+  width: 100%; }
+
+.arrived {
+  color: #e3151a; }
+
+#loginorsignup {
+  margin-top: 0; }
+
+#logo {
+  text-align: center; }
+
+@media (max-width: 736px) {
+  #img {
+    width: 100%;
+    height: 100%; } }
+@media (min-width: 736px) {
+  #img {
+    width: 50%;
+    height: 50%; } }
+#signupReminder {
+  font-size: 15px;
+  color: #888888;
+  text-align: center;
+  margin: 10px; }
+
+.profilePic {
+  border-radius: 100%;
+  overflow: hidden;
+  box-sizing: content-box;
+  margin: 0 auto;
+  border: 5px solid #f7f7f7;
+  width: 90px;
+  height: 90px; }
+
+#userFullName {
+  margin: 15px 0;
+  color: #e3151a;
+  font-weight: bold; }
+
+#referlink {
+  margin: 0 auto; }
+
+#forgotlink {
+  font-size: 14px;
+  float: right; }
+
+#sidebarWrapper {
+  padding-left: 14px !important;
+  padding-right: 14px !important; }
+
+.ui.inverted.menu {
+  background-color: #E3151A;
+  opacity: 0.9;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
+
+.dishes .card {
+  width: 100%; }
+
+#paymentBtn.red:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px; }
+#paymentBtn.red:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px; }
+
+#signUpBtn.red:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px; }
+#signUpBtn.red:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px; }
+
+#sendemailBtn.red:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px; }
+#sendemailBtn.red:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px; }
+
+#resetBtn.red:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px; }
+#resetBtn.red:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px; }
+
+.ui.form .field > .selection.dropdown {
+  width: 25%; }
+.ui.form .fields .wide.field {
+  width: 6.25%;
+  padding-left: 0;
+  padding-right: 0; }
+
+.ui.mini.input {
+  width: 25%; }
+
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
+
+#termsandconditions > a {
+  padding-left: 8%; }
+
+#accountBalance .label {
+  max-width: 100px;
+  font-size: 12px;
+  color: #e3151a; }

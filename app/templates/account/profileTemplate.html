@@ -1,0 +1,28 @@
+<div action="" method="POST" id="signupForm" class="ui form">
+    <div class="ui segment">
+        <div id="basicinfo">
+            <div id="nameinfo" class="two fields">
+                <div class="ui fluid field">
+                    <input id="first_name" class="ui input fname" placeholder="First Name" type="text" name="first_name" value="<%= firstName %>">
+                </div>
+                <div class="ui fluid field">
+                    <input id="last_name" class="ui input lname" placeholder="Last Name" type="text" name="last_name" value="<%= lastName %>">
+                </div>
+            </div>
+            <div class="ui fluid field">
+                <input id="email" class="ui input required email" placeholder="E-mail, this will be your username" type="text" name="email" value="<%= email %>">
+            </div>
+            <div class="ui fluid field">
+                <input id="phonenumber" class="ui input required phonenumber" placeholder="Phone Number, e.g. 7772228888" type="text" name="phonenumber" value="">
+            </div>
+            <div class="ui fluid field">
+                <input id="password" class="ui input required password" placeholder="Password" type="password" name="password" value="">
+            </div>
+        </div>
+    </div>
+    <button id="signUpBtn" class="center aligned ui fluid red button">Sign Up</button>
+    <div id="signupReminder"><p>We use your email and mobile number to send you order confirmation and pickup notification.</p></div>
+</div>
+
+
+

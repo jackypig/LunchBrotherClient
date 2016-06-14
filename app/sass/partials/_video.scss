@@ -1,0 +1,16 @@
+    .scroll-wrapper {
+        width:100%;
+        position: relative;
+        height: 0;
+        padding-top: 35px;
+        padding-bottom: 56.25%;
+        overflow: hidden;
+        iframe {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+

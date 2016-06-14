@@ -1,0 +1,12 @@
+<% if (payments && payments.length != 0) { %>
+<% _.each(payments, function(amount, restaurant) { %>
+<tr>
+    <td><%= restaurant %></td>
+    <td>$<%= amount.toFixed(2) %></td>
+</tr>
+<% })%>
+<% } else { %>
+<tr>
+    <td colspan="2" class="center aligned">No records.</td>
+</tr>
+<% } %>

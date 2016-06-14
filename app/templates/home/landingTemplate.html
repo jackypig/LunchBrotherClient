@@ -1,0 +1,87 @@
+<div id="example">
+    <div class="ui sticky">
+        <form class="ui form">
+            <div class="two fields">
+                <div class="field">
+                    <div class="ui search selection dropdown college-selector">
+                        <input type="hidden" name="university">
+                        <div class="default text">Select a location</div><i class="dropdown icon"></i>
+                        <div class="menu">
+                            <% _.each(universities, function(university) { %>
+                            <div class="item" data-value="<%= university.get('biz_name') %>"><i class="university icon"></i><%= university.get('biz_name') %></div>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="selection ui dropdown dp-selection" tabindex="0">
+                        <div class="default text">Select a Point</div><i class="dropdown icon"></i>
+                        <div class="menu"></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="weeklyMenu"></div>
+    <div class="ui divider hidden"></div>
+    <button class="center aligned fluid ui red button-lg" href="#signupemail" id="signUpBtn">Sign up and try!</button>
+
+    <div class="ui divider hidden"></div>
+    <button id="loginBtn" class="center aligned ui fluid orange button-lg" onclick="location.href='#login'">
+        <i class="sign in icon"></i>Log In
+    </button>
+</div>
+
+<!-- feedback begin -->
+<div id="voteDialog" class="ui small test modal">
+    <div class="content">
+        <div class="ui icon message">
+            <i class="info circle icon"></i>
+            <div class="content">
+                <div class="header">
+                    Oops... We don't have service at this location yet!
+                </div>
+                <p>Vote for it, and we will be there soon!</p>
+            </div>
+        </div>
+        <div class="ui left floated red medium statistic">
+            <div class="value" id="numberOfVote">
+                323
+            </div>
+            <div class="label">
+                Voted!
+            </div>
+        </div>
+        <h5 class="ui header" id="targetCollege">University of Maryland College Park</h5>
+        <div class="ui form fluid">
+            <div class="field">
+                <input type="email" placeholder="Your School Email..." id="voterEmail">
+            </div>
+        </div>
+        <div class="ui divider hidden"></div>
+    </div>
+    <div class="actions">
+        <div class="one ui fluid buttons">
+            <div class="ui ok basic button">
+                <span class="center aligned ui fluid red button">Vote!</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- feedback end -->
+
+<!--<script>-->
+<!--$('.ui.sticky').sticky({-->
+<!--offset: 60,-->
+<!--context: '#example'-->
+<!--});-->
+<!--</script>-->
+
+<!--ClickMeter.com page views tracking: Weekly menu page -->
+<script type='text/javascript'>
+var ClickMeter_pixel_url = '//pixel.watch/sgv2';
+</script>
+<script type='text/javascript' id='cmpixelscript' src='//s3.amazonaws.com/scripts-clickmeter-com/js/pixelNew.js'></script>
+<noscript>
+    <img height='0' width='0' alt='' src='http://pixel.watch/sgv2' />
+</noscript>

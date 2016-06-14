@@ -1,0 +1,29 @@
+<h1 class="ui small center aligned header">Where is the delivery man?</h1>
+
+<div class="ui segment">
+    <div class="ui vertical segment">
+        <div class="ui column grid summary-list">
+            <% if(rest){ %>
+            <div class="sixteen wide column center aligned">The delivery man is at rest now.</div>
+            <% } else if (ready) { %>
+                <% _.each (pickUpLocations, function(pickUpLocation) { %>
+                    <div class="six wide column">
+                        <span class="summary-location"><%= pickUpLocation.get('address') %></span>
+                    </div>
+                    <div class="six wide column">
+                        <span id="contact" class="summary-contact">Contact: <%= pickUpLocation.get('distributor').get('firstName') %> (<%= pickUpLocation.get('distributor').get('telnum') %>)</span>
+                    </div>
+                    <div class="four wide column right aligned">
+                        <span class="summary-status"><%= pickUpLocation.status %></span>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <div class="sixteen wide column center aligned" style="font-style: italic">The delivery man is not ready yet.</div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<div id="mapHolder" class="ui segment" style="height: 300px">
+
+</div>

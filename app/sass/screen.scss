@@ -1,0 +1,315 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "global/variable";
+@import "global/mixin";
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import "compass/css3";
+@import "compass/reset";
+@import "partials/sidebar";
+@import "partials/dish";
+@import "partials/home";
+@import "partials/manage";
+@import "partials/video";
+//@extend-elements
+//original selectors
+//#orderBtn.red, #paymentBtn.red, #loginBtn.red, #arriveBtn.red, #signUpBtn.red, #sendemailBtn.red, #resetBtn.red
+
+//global UI
+.default.text{
+  color:$color_red;
+}
+
+
+html {
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: $color_lgrey;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+  height: auto !important;
+  min-height: 100%;
+}
+
+header {
+	min-width: 320px;
+  .brand.item {
+    img {
+      width: 1.5em;
+      padding:0 7px;
+    }
+  }
+}
+
+.hide {
+    display: none !important;
+}
+
+.space {
+	width: 100%;
+	clear: both;
+	height: 100px;
+}
+#today {
+	margin-top: 4px;
+	font-weight: normal;
+	width: 33.33%;
+}
+#barTitle {
+	width: 31%;
+	text-align: center;
+	float: left;
+}
+#hamBtnWrapper {
+	text-align: right;
+	padding-top:0;
+  padding-bottom:0;
+	> div {
+		margin: 0;
+		padding-top: 11px;
+		padding-bottom: 11px;
+		width: 40%;
+	}
+	.ui.dropdown .menu {
+	}
+}
+#language {
+	display: inline-block;
+}
+.language-text {
+	float: left;
+}
+
+.ui.red.button-lg {
+	@extend %extend_1;
+	background-color: $color_red;
+}
+
+.ui.button-lg.grey{
+		@extend %extend_1;
+        background-color: $color_grey;
+}
+.ui.button-lg.orange{
+		@extend %extend_1;
+        background-color: $color_orange;
+}
+
+
+
+#loginBtnContent {
+	&.grey {
+		color: $color_grey;
+	}
+	&.red {
+		color: $white;
+	}
+}
+.notification {
+	margin-top: 30px;
+}
+#orderMessage {
+	//Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: none;
+	background: none;
+	font-size: 12px;
+	color: $color_grey;
+	padding: 20px 0 20px 0 !important;
+	margin: 0 !important;
+	a {
+		color: #E3151E;
+	}
+}
+#statusTracker {
+	font-size: 12px;
+}
+#payment {
+	padding: 15px;
+}
+#addressOption {
+	min-width: 150px;
+	margin-left: 2%;
+	.default {
+		float: left;
+		width: 75%;
+		//Instead of the line below you could use @includetext-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		text-shadow: 0.5px -0.5px $color_text_whiteshadow;
+	}
+	.dropdown.icon {
+		margin-bottom: 10px;
+	}
+}
+#expyear {
+	min-width: 150px;
+}
+.check {
+	width: 85%;
+	margin-left: 20px;
+}
+.thanks {
+	color: #E3151A;
+}
+#customerinfo {
+	padding: 10px;
+}
+.order-detail {
+	border: 1px solid $black_15;
+}
+
+#orderStats {
+	.column {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.summary-list {
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+}
+#inputCardInfo {
+        display: block;
+	margin: 0 0 .2857rem;
+	color: rgba(0,0,0,.8);
+	font-size: .9285em;
+	font-weight: 700;
+	text-transform: none;
+		  
+}
+
+#newCardInfo {
+	//Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: none;
+	margin: 2%;
+}
+#contactinfo {
+	margin: 2%;
+}
+#agreements {
+	margin: 2%;
+}
+#basicinfo {
+	margin: 2%;
+}
+#cardselector {
+	margin: 2%;
+}
+#fullscreen {
+	display: none;
+}
+#smallmap {
+	width: 100%;
+}
+.arrived {
+	color: $color_red;
+}
+#loginorsignup {
+	margin-top: 0;
+}
+#logo {
+	text-align: center;
+}
+@media(max-width: 736px) {
+	#img {
+		width: 100%;
+		height: 100%;
+	}
+}
+@media(min-width: 736px) {
+	#img {
+		width: 50%;
+		height: 50%;
+	}
+}
+#signupReminder {
+	font-size: 15px;
+	color: $color_grey;
+	text-align: center;
+	margin: 10px;
+	@extend %extend_3;
+}
+#copyright {
+	@extend %extend_3;
+}
+.profilePic {
+	//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+	border-radius: 100%;
+	overflow: hidden;
+	//Instead of the line below you could use @includebox-sizing($bs)
+	box-sizing: content-box;
+	margin: 0 auto;
+	border: 5px solid $color_lgrey;
+	width: 90px;
+	height: 90px;
+}
+#userFullName {
+	margin: 15px 0;
+	color: $color_red;
+	font-weight: bold;
+}
+#referlink {
+	margin: 0 auto;
+}
+#forgotlink {
+	font-size: 14px;
+	float: right;
+}
+#sidebarWrapper {
+	padding-left: 14px !important;
+	padding-right: 14px !important;
+}
+.ui.inverted.menu {
+	background-color: #E3151A;
+	opacity: 0.9;
+	//Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 0 5px $black_50;
+  &.bottom{
+    & .item-left{
+      display:block;
+      font-size:0.6em;
+    }
+    & .item-left .icon{
+      display:block;
+      text-align:center;
+      height:1em;
+      margin:0 auto 0.5em;
+      font-size:1.8em;
+    }
+  }
+}
+.dishes .card {
+	width: 100%;
+}
+
+#resetBtn.red {
+	@extend %extend_1;
+	&:hover {
+		//Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0 -0.25em 0 0 $color_btn_shadow inset;
+		top: 1px;
+	}
+	&:active {
+		//Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0 0 $color_btn_active;
+		top: 2px;
+	}
+}
+
+.clearfix:after {
+	content: ".";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+}
+#termsandconditions > a {
+	padding-left: 8%;
+}
+
+.college-selector {
+  color: $color_black !important;
+  .default.text{
+    color: $color_black !important;
+  }
+}

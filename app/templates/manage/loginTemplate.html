@@ -1,0 +1,42 @@
+<!-- login -->
+<h3 id="reminder" class="ui center aligned header">Sign In to Your Account</h3>
+<div id="loginError" class="ui hidden warning message">
+    <i class="close icon"></i>
+</div>
+<div class="ui hidden divider"></div>
+<div id="loginInfo">	
+    <form action="" method="POST" id="loginForm" class="ui form">
+        <div class="two fields">
+            <div class="required field">
+                <div class="ui icon input">
+                    <input id="username" type="text" placeholder="Username" name="username" />
+                    <i class="user icon"></i>
+                </div>
+            </div>
+            <div class="ui hidden divider"></div>
+            <div class="required field">
+                <div class="ui icon input">
+                    <input id="password" type="password" placeholder="Password" name="password" />
+                    <i class="lock icon"></i>
+                </div>
+            </div>
+        </div>
+        <!--<div class="two fields">
+            <div class="required field">
+                <input id="loginRegistrationCode" type="text" placeholder="Registration Code" name="loginRegistrationCode" />
+                <div class="ui top pointing label">
+                    Only required for the first time login
+                </div>
+            </div>
+        </div>-->
+        <div class="ui hidden divider"></div>
+        <button id="loginBtn" type="submit" class="center aligned ui red button-lg"><i class="sign in icon"></i><a id="loginBtnContent" class="red">Log In</a></button>
+        <div class="ui divider hidden"></div>
+        <!--<div id= "fbLoginBtn" class="ui facebook fluid button">-->
+        <!--<i class="facebook icon"></i> Facebook-->
+        <!--</div>-->
+        <div class="ui divider"></div>
+        <a id="forgotlink" href="#forgotpassword">Forgot Password?</a>
+    </form>
+</div>
+

@@ -1,0 +1,143 @@
+<h1 class="ui small center aligned header" id="restaurantPageTitle"></h1>
+<form class="ui form" id="restaurantForm">
+  <input type="hidden" name="restaurantId" id="restaurantId" value="<%= restaurant.id %>">
+  <h4 class="ui dividing header">Basic Information</h4>
+  <div class="field">
+    <label>Restaurant Name</label>
+    <input type="text" name="restaurantName" id="restaurantName" value="<%= restaurant.get('name') %>">
+  </div>
+  <div class="field">
+    <label>Restaurant Type</label>
+    <div class="ui fluid search selection dropdown restaurant-type-selection">
+      <input type="hidden" name="type">
+      <i class="dropdown icon"></i>
+      <div class="default text">Select Restaurant Type</div>
+      <div class="menu">
+        <div class="item" data-value="American">American</div>
+        <div class="item" data-value="Chinese">Chinese</div>
+        <div class="item" data-value="Japanese">Japanese</div>
+        <div class="item" data-value="Korean">Korean</div>
+        <div class="item" data-value="Mexican">Mexican</div>
+        <div class="item" data-value="Thai">Thai</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Restaurant Area</label>
+    <div class="ui fluid search selection dropdown restaurant-area-selection">
+      <i class="dropdown icon"></i>
+      <div class="default text">Select Restaurant Area</div>
+      <div class="menu">
+        <% _.each(grids, function(grid){ %>
+        <div class="item" data-value="<%= grid.id %>"><%= grid.get('name') %></div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Restaurant Address</label>
+    <input type="text" name="restaurantAddress" id="restaurantAddress" value="<%= restaurant.get('address') %>">
+  </div>
+
+  <div class="field">
+    <label>Restaurant Website URL</label>
+    <input type="text" name="restaurantWebsite" id="restaurantWebsite" value="<%= restaurant.get('url') %>">
+  </div>
+
+  <div class="field">
+    <label>Restaurant Phone Number</label>
+    <input type="text" name="restaurantTelumn" id="restaurantTelnum" value="<%= restaurant.get('telnum') %>">
+  </div>
+
+  <div class="field">
+    <label>Restaurant Owner/Manager</label>
+    <input type="text" name="restaurantManager" id="restaurantManager" placeholder="Full Name" value="<%= restaurant.get('managerName') %>">
+  </div>
+
+  <div class="field">
+    <label>Restaurant Email</label>
+    <input type="text" name="restaurantEmail" id="restaurantEmail" value="<%= restaurant.get('email') %>">
+  </div>
+
+  <div class="field">
+    <label>Pick Up Time</label>
+    <div class="ui fluid search selection dropdown pickup-time-selection">
+      <input type="hidden" name="type">
+      <i class="dropdown icon"></i>
+      <div class="default text">Select Pick-up Time</div>
+      <div class="menu">
+        <div class="item" data-value="10:15">10:15am</div>
+        <div class="item" data-value="10:30">10:30am</div>
+        <div class="item" data-value="10:45">10:45am</div>
+        <div class="item" data-value="11:00">11:00am</div>
+        <div class="item" data-value="11:15">11:15am</div>
+        <div class="item" data-value="11:30">11:30am</div>
+        <div class="item" data-value="11:45">11:45am</div>
+        <div class="item" data-value="12:00">12:00pm</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Order Confirm Number (For SMS Confirmation Purpose)</label>
+    <input type="text" name="orderConfirmNumber" id="orderConfirmNumber" value="<%= restaurant.get('confirmNumber') %>">
+  </div>
+
+  <h4 class="ui dividing header">Restaurant Evaluation</h4>
+  <div class="field">
+    <label>More Restaurant Information</label>
+    <textarea rows="2" name="restaurantDescription" id="restaurantDescription" placeholder="Tell us something about the restaurant..."><%= restaurant.get('description') %></textarea>
+  </div>
+
+  <div class="field">
+    <label>Yelp Link</label>
+    <div class="ui left icon input">
+      <input type="text" placeholder="http://www.yelp.com/..." id="yelpLink" name="yelpLink" value="<%= restaurant.get('yelpLink') %>">
+      <i class="yelp icon"></i>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="ui selection dropdown yelp-rating-selection">
+      <input type="hidden" name="">
+      <i class="dropdown icon"></i>
+      <div class="default text">Yelp Rating</div>
+      <div class="menu">
+        <div class="item" data-value="1">1</div>
+        <div class="item" data-value="2">2</div>
+        <div class="item" data-value="3">3</div>
+        <div class="item" data-value="4">4</div>
+        <div class="item" data-value="5">5</div>
+      </div>
+    </div>
+  </div>
+
+  <h4 class="ui dividing header">Payment</h4>
+  <div class="field">
+    <label>Routing number</label>
+    <div class="ui input">
+      <input type="text" class="restaurant-routing-number" placeholder="Put your bank routing number here, e.g. 111000025" data-stripe="routing-number" value="<%= bankAccount.get('routingNumber') %>">
+      <input type="hidden" class="original-restaurant-routing-number" value="<%= bankAccount.get('routingNumber') %>">
+    </div>
+  </div>
+  <div class="field">
+    <label>Account number</label>
+    <div class="ui input">
+      <input type="text" class="restaurant-account-number" placeholder="Put your bank account number here, e.g. 000123456789" data-stripe="account-number" value="<%= bankAccount.get('accountNumber') %>">
+      <input type="hidden" class="original-restaurant-account-number" value="<%= bankAccount.get('accountNumber') %>">
+    </div>
+  </div>
+  <div class="field">
+    <input type="hidden" class="account-country" data-stripe="country" value="US" disabled>
+  </div>
+  <div class="field">
+    <input type="hidden" class="account-currency" data-stripe="currency" value="USD" disabled>
+  </div>
+
+</form>
+<div class="ui divider hidden"></div>
+<button class="center aligned ui red button" id="saveRestaurantBtn">Save this restaurant</button>
+<button class="center aligned ui grey button" id="cancelRestaurantBtn">Cancel</button>
+

@@ -1,0 +1,48 @@
+.desc-line{
+  color:$color_grey;
+  font-size:$sm;
+  padding-top:5px;
+}
+
+#menuList{
+  padding:0 1.2em;
+  & .item{  
+    padding: 10px 0;
+    border-top: none;
+    border-bottom: 1px solid rgba(34,36,38,.15);
+  }
+  & .item .ui.grid.content{
+    color:$color_grey;
+    font-size:$sm;
+    padding:0 10px;
+    & .column{
+      padding-top:10px;
+      padding-bottom:10px;
+    }
+  }
+
+  & .header {
+    line-height: 37px;
+  }
+}
+
+.original-price{
+  font-size:$sm;
+  color:$color_grey;
+}
+
+#restaurant-selector-edit {
+  padding-left:0;
+}
+
+//distributor order list table
+.order-name {
+    font-weight:700;    
+}
+
+.order-tel {
+    font-size:$sm;
+    padding-top:5px;
+}
+
+

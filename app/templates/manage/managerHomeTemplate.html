@@ -1,0 +1,317 @@
+<div class="ui two buttons">
+    <button class="ui orange basic button" id="showDistributorStatus">Work as distributor</button>
+    <button class="ui orange basic button" id="showDriverStatus">Work as driver</button>
+</div>
+<h4 class="ui top attached red header">
+    <i class="marker icon small"></i>Manage Distributing Points
+</h4>    
+
+<div class="ui attached segment">
+    <div class="ui middle very relaxed aligned list">
+        <% _.each(distributingPoints, function(distributingPoint) { %>
+        <div class="item">
+            <div class="right floated content">
+                <button class="ui circular youtube small icon button"> <i class="youtube play icon"><a href="<%= distributingPoint.get('youtubeLink') %>" target="_blank"></a></i></button>
+                <button class="ui circular orange icon small button" id="dpEditButton-<%= distributingPoint.id %>"
+                                                                     data-id="<%= distributingPoint.id %>"
+                                                                     data-youtube="<%= distributingPoint.get('youtubeLink') %>"
+                                                                     data-address="<%= distributingPoint.get('address') %>"
+                                                                     <% if (distributingPoint.get('distributor')) { %>
+                                                                     data-distributor="<%= distributingPoint.get('distributor').id %>"
+                                                                     <% } else { %>
+                                                                     data-distributor=""
+                                                                     <% } %>
+                                                                     ><i class="icon edit"></i></button>
+                <button class="ui circular icon small button" id="dpDeleteButton-<%= distributingPoint.id %>" data-id="<%= distributingPoint.id %>"><i class="remove icon"></i>
+                </button>
+            </div>
+            <div class="content">
+                <div class="header">
+                    <%= distributingPoint.get('address') %>
+                </div>
+                <div class="desc-line description">
+                    <% if(distributingPoint.get('distributor')) { %>
+                    Contact: <%= distributingPoint.get('distributor').get('firstName') %> (<%= distributingPoint.get('distributor').get('telnum') %>)
+                    <% } else { %>
+                    No distributor assigned
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <% })%>
+</div>
+</div>
+<div class="ui bottom attached orange button" id="DPAdd" data-youtubeLink="" data-address="">
+    <i class="add icon"></i>
+    Add a new location
+</div>
+
+<h4 class="ui top attached red header">
+    <i class="users icon small"></i>Drivers & Distributors
+</h4>
+<div class="ui attached segment">
+    <div class="ui middle very relaxed aligned list">
+        <% _.each(employees, function(employee) { %>
+        <div class="item">
+            <div class="right floated content">
+                <button class="ui circular orange small icon button" id="employeeEditButton-<%= employee.id %>"
+                                                                     data-id="<%= employee.id %>"
+                                                                     data-first-name="<%= employee.get('worker').get('firstName') %>"
+                                                                     data-last-name="<%= employee.get('worker').get('lastName') %>"
+                                                                     data-email="<%= employee.get('worker').get('email') %>"
+                                                                     data-phone-number="<%= employee.get('worker').get('telnum') %>"
+                                                                     data-password="<%= employee.get('worker').get('password') %>"
+                                                                     data-title="<%= employee.get('worker').get('permission') %>"><i class="icon edit"></i></button>
+                <button class="ui circular small icon button" id="employeeDeleteButton-<%= employee.id %>" data-id="<%= employee.id %>"><i class="remove icon"></i></button>
+            </div>
+            <img class="ui avatar image" src="/images/avatar/small/helen.jpg">
+            <div class="content">
+                <div class="header"><%= employee.get('worker').get('firstName') %></div>
+                <% if(employee.get('worker').get('permission') === DRIVER) { %>
+                <div class="description desc-line">Driver</div>
+                <% } else { %>
+                <div class="description desc-line">Distributor</div>
+                <% } %>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
+<div class="ui bottom attached orange button" id="addPerson" data-youtubeLink="" data-address="">
+    <i class="add icon"></i>
+    Add a new person
+</div>
+
+<h4 class="ui red top attached header">
+    <i class="small food icon"></i>Manage Restaurants & Dishes
+</h4>
+<div class="ui attached segment">
+    <button id="toManageRestaurants" class="orange ui button">Restaurant & Dish Panel</button> 
+</div>
+
+
+<h4 class="ui red top attached header">
+    <i class="small file text outline icon"></i>Manage Weekly Menu
+</h4>
+<div class="ui attached segment">
+    <div class="ui dropdown selection week-selection">
+        <i class="small calendar icon"></i><div class="default text" id="weekMenu">Select a week</div><i class="dropdown icon"></i>
+        <div class="menu">
+            <% _.each(weeks, function(week) { %>
+            <a class="item" data-value="<%= week %>">Weekly Menu <%= week %></a>
+            <% })%>
+        </div>
+    </div>
+    <div class="ui selection dropdown dp-selection">
+        <i class="marker icon small"></i><div class="default text">Select distributing point</div><i class="dropdown icon"></i>
+        <div class="menu">
+            <% _.each(distributingPoints, function(distributingPoint) { %>
+            <div class="item" data-value="<%= distributingPoint.id %>"><%= distributingPoint.get('address') %></div>
+            <% }) %>
+        </div>
+    </div>
+    <div id="menuList"></div>
+</div>
+
+
+<!--Widget Dialogs-->
+<div id="editDPDialog" class="ui small test modal">
+    <div class="header" style="background-color: #ffffff">
+        <label id="editDPLabel">Distribution Point Editor</label>
+    </div>
+    <div class="content">
+        <form action="" method="POST" id="dpForm" class="ui form">
+            <div class="field">
+                <div id="basicDPInfo">
+                    <span id="dpWarningLine" class="red"></span>
+                    <div id="dpinfo" class="two fields">
+                        <div class="ui fluid field">
+                            <input id="dp_location" class="ui input location" placeholder="Name of Location" type="text" name="dp_location" value="">
+                        </div>
+                        <div class="ui fluid field">
+                            <input id="dp_youtubeLink" class="ui input youtubeLink" placeholder="Youtube Link (optional)" type="text" name="dp_youtube_link" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <select class="ui dropdown" id="distributorSelector">
+                    <option value="">Select your distributor</option>
+                    <% _.each(distributors, function(distributor) { %>
+                    <option value="<%= distributor.id %>">
+                    <%= distributor.get('firstName') %> <%= distributor.get('lastName') %>
+                    </option>
+                    <% }) %>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <div class="ui basic cancel button">
+            <i class="remove icon"></i>
+            <label id="DPCancel">Cancel</label>
+        </div>
+        <div class="ui ok green button">
+            <i class="checkmark icon"></i>
+            <label id="DPSave">Save</label>
+        </div>
+    </div>
+</div>
+
+<div id="deleteDPDialog" class="ui small test modal">
+    <div class="header" style="background-color: #ffffff">
+        <label id="deleteDPLabel">Are you sure?</label>
+    </div>
+    <div class="content">
+        Do you really want to delete this Distribution Point?
+    </div>
+    <div class="actions">
+        <div class="ui basic cancel button">
+            <i class="remove icon"></i>
+            <label id="deleteDPCancel">Cancel</label>
+        </div>
+        <div class="ui ok orange button">
+            <i class="checkmark icon"></i>
+            <label id="deleteDPConfirm">Delete</label>
+        </div>
+    </div>
+</div>
+
+<div id="deletePersonDialog" class="ui small test modal">
+    <div class="header" style="background-color: #ffffff">
+        <label id="deletePersonLabel">Are you sure?</label>
+    </div>
+    <div class="content">
+        Do you really want to remove this employee?
+    </div>
+    <div class="actions">
+        <div class="ui basic cancel button">
+            <i class="remove icon"></i>
+            <label id="deletePersonCancel">Cancel</label>
+        </div>
+        <div class="ui ok orange button">
+            <i class="checkmark icon"></i>
+            <label id="deletePersonConfirm">Delete</label>
+        </div>
+    </div>
+</div>
+
+<div id="publishMenuDialog" class="ui small test modal">
+    <div class="header" style="background-color: #ffffff">
+        <label id="publishMenuLabel">Publish</label>
+    </div>
+    <div class="content">
+        Your menu is going to be published. Are you sure? </br>
+        <span id="publishMenuWarningLine" class="red"></span>
+    </div>
+    <div class="actions">
+        <div class="ui basic cancel button">
+            <i class="remove icon"></i>
+            <label id="publishMenuCancel">Cancel</label>
+        </div>
+        <div class="ui green ok button">
+            <i class="checkmark icon"></i>
+            <label id="publishMenuConfirm">Confirm</label>
+        </div>
+    </div>
+</div>
+
+<div id="editPersonDialog" class="ui small test modal">
+    <div class="header" style="background-color: #ffffff">
+        <label id="editPersonLabel">Driver/Distributor Editor</label>
+    </div>
+    <div action="" method="POST" id="new-personForm" class="ui form">
+        <div id="basicPersonInfo">
+            <div id="basicinfo">
+                <div id="nameinfo" class="two fields">
+                    <div class="ui fluid field">
+                        <input id="first_name" class="ui input fname" placeholder="First Name" type="text" name="first_name" value="">
+                    </div>
+                    <div class="ui fluid field">
+                        <input id="last_name" class="ui input lname" placeholder="Last Name" type="text" name="last_name" value="">
+                    </div>
+                </div>
+                <div class="ui fluid field">
+                    <input id="email" class="ui input required email" placeholder="E-mail, this will be your username" type="text" name="email">
+                </div>
+                <div class="ui fluid required field">
+                    <input id="phonenumber" class="ui input required phonenumber" placeholder="Phone Number, e.g. 7772228888" type="text" name="phonenumber">
+                </div>
+                <div class="ui fluid field">
+                    <input id="password" class="ui input required password" placeholder="Password" type="password" name="password">
+                </div>
+                <div class="ui fluid field">
+                    <select id="titleOptions">
+                        <option value="">Select your title</option>
+                        <option value="2">Driver</option>
+                        <option value="3">Distributor</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui basic cancel button">
+            <i class="remove icon"></i>
+            <label id="editPersonCancel">Cancel</label>
+        </div>
+        <div class="ui ok green button">
+            <i class="checkmark icon"></i>
+            <label id="editPersonSave">Save</label>
+        </div>
+    </div>
+</div>
+
+
+<!-- Statistic Visualization -->
+<div class="ui top attached clearing segment">
+    <h4 class="ui red left floated header" style="margin-bottom:0">
+        <i class="line chart icon small"></i>Account Summary
+    </h4>
+</div>
+<div id="restaurantPayment"></div>
+<div class="ui bottom attached segment">
+    <table class="ui small striped unstackable table">
+        <thead>
+        <tr>
+            <th>You need to pay:
+            </th>
+            <th class="right aligned">
+                <div id="periodSelector" class="ui dropdown">
+                    <i class="small calendar outline icon"></i>
+                    <div class="text"><%= lastThreeWeeks[0] %></div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <% _.each(lastThreeWeeks, function(week) { %>
+                        <div class="item" data-value="<%= week %>"><%= week %></div>
+                        <% })%>
+                    </div>
+                </div>
+            </th>
+        </tr>
+        </thead>
+        <tbody id="billTableBody">
+        </tbody>
+    </table>
+    <div class="ui divider hidden"></div>
+    <h5 class="ui right floated header" style="margin-bottom:10px;">Date: <input type="text" id="datepicker"></h5>
+    <table class="ui small celled unstackable table" id="salesTableBody">
+    </table>
+
+                    </div>
+
+                    <!--Bank Account Section-->
+                    <h4 class="ui top attached red header">
+                        <i class="money icon small"></i>Bank Account
+                    </h4>
+                    <div class="ui attached segment">
+                        Last 4 Digit of Your Bank Account Number: <%= bankAccount.get('last4DigitAccount') %>
+                    </div>
+                    <div class="ui bottom attached orange button toBankAccount" data-id="<%= bankAccount.id %>">
+                        Create/Change Bank Account
+                    </div>
+
+                    <!--Credit Card Section-->
+                    <div class="ui divider hidden"></div>
+                    <div id="creditCardSection"></div>

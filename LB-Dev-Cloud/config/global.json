@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "LB-Dev": {
+            "applicationId": "Cgz1qCbMW85tSsBrYhMlWThKm1pYT5D4U0NmEGxX",
+            "masterKey": "WWUmfLjVp7EDhDIpHVgBgMUiJ7n3NWgW1oLxj4gE"
+        },
+        "_default": {
+            "link": "LB-Dev"
+        }
+    },
+    "global": {
+        "parseVersion": "1.4.2"
+    }
+}

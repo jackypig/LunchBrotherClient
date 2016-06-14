@@ -1,0 +1,28 @@
+<thead>
+    <tr>
+        <th class="four wide">Dish</th>
+        <th class="three wide">Cash Orders</th>
+        <th class="three wide">Credit Card Orders</th>
+        <th class="three wide">Daily Income</th>
+    </tr>
+</thead>
+<tbody>
+<% if (inventories && inventories.length != 0) { %>
+    <% _.each(inventories, function(inventory) { %>
+        <tr>
+            <td><%= inventory.get('dish').get('dishName') %> (<%= inventory.get('dish').get('dishCode') %>)</td>
+            <td><%= inventory.get("totalOrderQuantity") - inventory.get('payByCardCount') %> ($<%= inventory.get('cashPrice') %>) </td>
+            <td><%= inventory.get("payByCardCount") %> ($<%= inventory.get('price') %>)</td>
+            <td>$<%= inventory.income.toFixed(2) %></td>
+        </tr>
+    <% })%>
+<% } else { %>
+    <tr>
+        <td colspan="4" class="center aligned">No records.</td>
+    </tr>
+<% } %>
+    <tr class="positive">
+        <td colspan=2>Next Payment:<%= nextPaymentDate %></th>
+        <td colspan=2>Amount:$<%= nextPaymentAmount %></th>
+    </tr>
+</tbody>

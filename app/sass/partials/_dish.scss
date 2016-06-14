@@ -1,0 +1,216 @@
+.dishes .card {
+    width: 100%;
+}
+//overide semantic UI card style
+
+.ui .card{
+    @include box-shadow(0 0.1em 0.3em 0 #d4d4d5);
+    .image {
+        overflow: hidden;
+        background-position: center center;
+        background-size: cover;
+    }
+    .price-hint{
+        font-size:$xsm;
+        color:$color_lgreen;
+        text-transform: none;
+        padding-left:5px;
+    }
+}
+
+#weeklyMenu .card .image{
+    height:120px;
+}
+
+#dishList .card .image{
+    height:240px;
+}
+
+#page {
+    .dimmer {
+        z-index:0;
+        background:rgba(0,0,0,.65);    
+        .dimmer-content{
+            @include vertical-align;            
+        }    
+    };    
+    padding-top: 32px;
+    .dish-desc {
+        font-size: $lg;
+        padding-left: 10px;
+        color: $color_dgrey;
+    }
+    .minus-btn-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+        button {
+            border: 1px solid $color_grey;
+        }
+    }
+    .plus-btn-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+        button {
+            border: 1px solid $color_grey;
+        }
+    }
+    .order-count-wrapper {
+        padding-left: 0.6em;
+        padding-right: 0.6em;
+    }
+    .dish-count {
+        background-color: $white;
+        border: 1px solid $color_grey;
+        width: 100%;
+        padding: 7px 11px;
+        font-weight: normal;
+    }
+    .img-overlay{
+        position: absolute;
+        height:40px;
+        width:100%;
+        bottom:0;
+        background:rgba(242,155,48,0.9);
+        color:$white;
+        text-align: center;
+        font-size:$md;
+        font-weight:bold;
+        padding-top:0.8rem;  
+    }
+
+    //  .ui.segment {
+        //    padding: 0.4em;
+        //  }
+        .card .content .ui.button {
+            font-size: 0.7rem;
+        }
+
+        //overide default tab style
+        .ui.pointing.secondary.menu
+        .item{
+            display:block;
+            padding:10px 0;
+            text-align:center;
+            font-size:$sm;
+            color:$color_grey;
+            width:50%;
+            border-radius:0;
+            &:hover{
+                color:$color_grey;
+            }
+        }
+        .active.item{
+            border-left:none;
+            border-color:$color_red;
+        }	
+        .dishinfo{
+            .item{
+                color:$color_grey;
+                font-size:$sm;
+            }
+        }
+        @mixin transition($a) {
+            -webkit-transition : all $a ease 0s;
+            -moz-transition : all $a ease 0s;
+            -o-transition : all $a ease 0s;
+            transition : all $a ease 0s;
+        }
+
+        /* Transform Translate Mixin */
+        @mixin transfom-translate($b, $c){
+            -webkit-transform: translate($b, $c);
+            -ms-transform: translate($b, $c);
+            transform: translate($b, $c);
+        }
+        .header-week {
+            position: relative;
+                display: block;
+                    margin: 30px auto;
+                        width: 100%;
+                            text-align: center;
+            &:before {
+                content: '';
+                position: absolute;
+                width: 50%;
+                height: 1px;
+                top: 50px;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                background-color: $color_lgrey;
+            }  
+
+            &:after {
+                content: '';
+                position: absolute;
+                width:40px;
+                height: 3px;
+                top:47px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                background-color: $color_yellow;
+                @include transition(0.3s);
+            }
+
+            &:hover {
+                &:after {
+                    width: 50px;
+                }
+            }
+        }
+
+
+        .menu-dishinfo, .dishinfo{
+            .content{
+                font-size:$sm;
+                .green{
+                    color:$color_lgreen;
+                }
+                .yellow{
+                    color:$color_yellow;
+                }
+            }
+        }
+
+        .tab-dish-detail{
+            border:none;
+            margin-bottom:0 !important;
+        }
+
+        .dish-detail{
+            line-height:1.2;    
+        }
+        .dish-intro{
+            font-size:$sm;
+            color:$color-grey;
+        }
+        .dish-ingredients {
+            font-size:$xsm;
+            color:$color-grey;    
+            margin-top:15px;
+            .header{
+                color:$color_dgrey;
+            }
+        }
+        .restaurantInfo{
+            font-size:$sm;                                                                                 
+            color:$color-grey;
+            .header{
+                color:$color_dgrey;
+                font-size:$md;
+            }
+        }
+
+        .extra.content.horizontal.segments {
+            padding:0;
+            & span {
+                width:100%;
+                text-align:center;
+            }
+        }
+    }
+
+

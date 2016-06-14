@@ -1,0 +1,54 @@
+
+  <!-- This page is displayed whenever someone has successfully reset their password.
+       Pro and Enterprise accounts may edit this page and tell Parse to use that custom
+       version in their Parse app. See the App Settigns page for more information.
+       This page will be called with the query param 'username'
+   -->
+
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+    <html class="no-js" lang="en">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0, user-scalable=0">
+        <title>Lunchbrother</title>
+        <!-- 2. Include CSS -->
+        <link rel="stylesheet" href="../js/libs/semantic_2.0/semantic.min.css" type="text/css" />        
+        <link rel="stylesheet" href="../stylesheets/screen.css">
+        <link rel="stylesheet" href="../js/libs/jquery-ui-1.11.4.custom/themes/smoothness/jquery-ui.min.css" type="text/css" />
+    </head>
+    <body>
+        <header class="ui grid">
+            <div class="row">
+                <div  class="ui fixed inverted navbar menu">
+                    <a href="#home" class="brand item">Lunchbrother</a>
+                    <div class="right menu">
+                        <a id="account" class="item" style="display: none">Hi, <span id="accountBarFirstName"></span><i class="user icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="ui grid main page">
+            <div class="row">
+                <div class="column">
+                    <div class="space"></div>
+                    <h1  id="emailVerification" class="ui small center aligned header">
+                       <br />You have activated your account successfully, now you can start to use our service! 
+                    </h1>
+                    <h1  id=""class="ui small center aligned header">   
+                       <br />If you want to sign in, please click <a href="https://lunchbrother.com/">here</a>.</h1>
+                      
+
+                </div>
+            </div>
+        </section>
+    </body>
+    </html>

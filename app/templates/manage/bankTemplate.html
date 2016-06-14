@@ -1,0 +1,27 @@
+<h1 class="ui small center aligned header">Bank Account Information</h1>
+
+<form action="" method="POST" id="bankForm" class="ui form">
+  <div class="field">
+    <label>Country</label>
+    <input type="text" class="account-country" data-stripe="country" value="US" disabled>
+  </div>
+  <div class="field">
+    <label>Currency</label>
+    <input type="text" class="account-currency" data-stripe="currency" value="USD" disabled>
+  </div>
+  <div class="field">
+    <label>Routing Number</label>
+    <input type="text" class="routing-number" placeholder="Put your bank routing number here, e.g. 111000025" data-stripe="routing-number" value="<%= bankAccount.get('routingNumber') %>">
+    <input type="hidden" class="original-routing-number" value="<%= bankAccount.get('routingNumber') %>">
+  </div>
+  <div class="field">
+    <label>Account Number</label>
+    <input type="text" class="account-number" placeholder="Put your bank account number here, e.g. 000123456789" data-stripe="account-number" value="<%= bankAccount.get('accountNumber') %>">
+    <input type="hidden" class="original-account-number" value="<%= bankAccount.get('accountNumber') %>">
+  </div>
+  <button class="center aligned ui red button" id="bankBtn" type="submit" >Save Bank Account</button>
+  <span class="bank-errors"></span>
+</form>
+
+<div class="ui divider hidden"></div>
+<button class="center aligned ui grey button cancelBankBtn">Cancel</button>

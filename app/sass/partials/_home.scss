@@ -1,0 +1,81 @@
+//style of home page
+
+.column{
+  padding-bottom: 1rem;
+}
+
+.summary-name {
+	font-size: 12px;
+	color: $color_grey;
+}
+
+.summary-count {
+	font-size: 12px;
+	color: $color_grey;
+}
+.summary-price {
+	font-size: 12px;
+	color: $color_grey;
+}
+.summary-total {
+	font-size: 12px;
+	color: $color_grey;
+	display: inline-block;
+	color: #E3151E;
+}
+.summary-tax {
+	font-size: 12px;
+	color: $color_grey;
+	display: inline-block;
+	width: 40px;
+}
+.summary-coupon {
+	font-size: 12px;
+	color: $color_grey;
+	display: inline-block;
+	width: 40px;
+	color: $color_green;
+}
+.summary-location {
+	color: $color_dgrey;
+	font-weight: bold;
+	font-size: 11px;
+}
+.summary-status {
+	color: #A3A3A3;
+	font-size: 11px;
+}
+.summary-contact {
+	color: #A3A3A3;
+	font-size: 11px;
+}
+.summary-total-label {
+	font-size: 12px;
+}
+.summary-tax-label {
+	font-size: 12px;
+}
+.summary-coupon-label {
+	font-size: 12px;
+}
+#timeAlert {
+	display: none;
+}
+#orderBtn {
+	&.red {
+		@extend %extend_1;
+		&:hover {
+			//Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+			box-shadow: 0 -0.25em 0 0 $color_btn_shadow inset;
+			top: 1px;
+		}
+		&:active {
+			//Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+			box-shadow: 0 0 $color_btn_active;
+			top: 2px;
+		}
+	}
+	&.grey {
+		@extend %extend_2;
+	}
+}

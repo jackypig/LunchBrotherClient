@@ -1,0 +1,105 @@
+<h1 class="ui small center aligned header">Add a new dish</h1>
+<div class="ui form">
+    <input type="hidden" id="dish-id" value="<%= dish.id %>">
+  <div class="field">
+    <label>Dish Name</label>
+    <input type="text" id="dish-name" name="dish-name" value="<%= dish.get('dishName') %>">
+  </div>
+    <div class="field">
+        <label>Dish Code</label>
+        <div class="ui selection dropdown dish-code-selection">
+            <input type="hidden" name="">
+            <i class="dropdown icon"></i>
+            <div class="default text">Code</div>
+            <div class="menu">
+                <%_.each(codes, function(code) { %>
+                <div class="item" data-value="<%= code %>"><%= code %></div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+
+  <div class="field">
+    <label>Dish Description</label>
+    <textarea rows="2" id="dish-description" name="dish-description" placeholder="Tell us something about the dish or you..."><%= dish.get('descriptionEn') %></textarea>
+  </div> 
+
+  <div class="field">
+    <label>Ingredients</label>
+    <textarea rows="2" id="dish-ingredients" name="dish-ingredients" placeholder="Split ingredients by ','"><%= dish.get('ingredients') %></textarea>
+  </div>
+
+    <div class="field">
+        <label>Original Price / LunchBrother Price</label>
+        <div class="two fields">
+            <div class="field">
+                <div class="ui labeled input">
+                    <div class="ui label">$</div>
+                    <input type="text" id="dish-original-price" placeholder="Original Price" value="<%= dish.get('originalPrice') %>">
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui labeled input">
+                    <div class="ui label">$</div>
+                    <input type="text" id="dish-price" placeholder="LunchBrother Price" value="<%= dish.get('Unit_Price') %>">
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <div class="fields">
+    <div class="field">
+      <div class="ui slider checkbox">
+        <input type="checkbox" tabindex="0" class="hidden" id="dish-spicy">
+        <label>Spicy</label>
+      </div>
+      <label></label>
+    </div>
+    <div class="field">
+      <div class="ui slider checkbox">
+        <input type="checkbox" tabindex="0" class="hidden" id="dish-gluten-free">
+        <label>Gluten Free</label>
+      </div>
+      <label></label>
+    </div>
+      <div class="field">
+          <div class="ui slider checkbox">
+              <input type="checkbox" tabindex="0" class="hidden" id="dish-vegetarian">
+              <label>Vegetarian</label>
+          </div>
+          <label></label>
+      </div>
+  </div> 
+  <div class="field">
+    <div class="ui selection dropdown dish-type-selection">
+        <input type="hidden" name="">
+      <i class="dropdown icon"></i>
+      <div class="default text">Type</div>
+      <div class="menu">
+          <div class="item" data-value="Beef">Beef</div>
+          <div class="item" data-value="Chicken">Chicken</div>
+          <div class="item" data-value="Fish">Fish</div>
+          <div class="item" data-value="Lamb">Lamb</div>
+          <div class="item" data-value="Pork">Pork</div>
+          <div class="item" data-value="Vegetable">Vegetable</div>
+      </div>
+    </div>
+  </div>
+  <div class="ui input dish-photo-upload">
+      <input type="file" id="dishPhoto" name="dishPhoto" accept="image/*">
+  </div>
+    <div class="ui divider hidden"></div>
+    <% if(dish.get('Image_File') != null) { %>
+    <div class="previewRow">
+        <img class="thumb" src="<%= dish.get('Image_File')._url %>" style="width: 400px"/>
+    </div>
+    <% } %>
+</div>
+<div class="ui divider hidden"></div>
+<button class="center aligned ui red button save-dish-btn">Save this dish</button>
+<div class="ui divider hidden"></div>
+<button class="center aligned ui grey button cancel-dish-btn">Cancel</button>
+
+<script>
+    $('.ui.checkbox').checkbox();
+</script>

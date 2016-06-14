@@ -1,0 +1,974 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+/* line 24, ../sass/global/_variable.scss */
+#orderBtn.red, .ui.button.red, #arriveBtn.red, #paymentBtn.red, #signUpBtn.red, #sendemailBtn.red, #resetBtn.red {
+  background-color: #e3151a;
+  box-shadow: 0 -0.3em 0 0 rgba(39, 41, 43, 0.15) inset;
+  padding: 1em 2em 1.35em;
+  width: 100%;
+  position: relative;
+}
+
+/* line 35, ../sass/global/_variable.scss */
+#orderBtn.grey, .ui.button.grey, #loginBtn {
+  background-color: #dddddd;
+  box-shadow: 0 -0.3em 0 0 rgba(39, 41, 43, 0.15) inset;
+  color: #9b9b9b;
+  padding: 1em 2em 1.35em;
+  width: 100%;
+  position: relative;
+}
+
+/* line 47, ../sass/global/_variable.scss */
+#signupReminder, #copyright {
+  font-size: 12px;
+  text-align: center;
+  margin: 10px;
+  color: #9b9b9b;
+}
+
+/* line 5, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+<<<<<<< HEAD
+=======
+#youtubeDiv iframe {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+#emailVerification{
+      color: #0067AB;
+      display: block;
+      font: inherit;
+      font-family: 'Open Sans', 'Helvetica Neue', Helvetica;
+      font-size: 20px;
+      font-weight: 600;
+      height: 30px;
+      line-height: 30px;
+      margin: 45px 0px 0px 45px;
+      padding: 0px 8px 0px 8px;  
+}
+>>>>>>> origin/master
+/* line 22, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 3, ../sass/partials/_sidebar.scss */
+.savebtn {
+  padding: 5px 9px;
+  background: #d95c5c;
+  font-size: 0.8em;
+  cursor: pointer;
+  color: #fff;
+  @box-shadow :inset 0 1px 0 #8a9cc2;
+  float: right;
+  display: none;
+}
+
+/* line 14, ../sass/partials/_sidebar.scss */
+.savebtn:hover {
+  color: #fff;
+  background: #e3151a;
+  text-decoration: none;
+}
+
+/* line 15, ../sass/partials/_sidebar.scss */
+.savebtn:active {
+  background: #d95c5c;
+}
+
+/* line 17, ../sass/partials/_sidebar.scss */
+.profileinfo {
+  background: #f2f2f2;
+  width: 100%;
+  padding: 4px 10px;
+  border-left: 1px solid #b3b3b3;
+  border-right: 1px solid #b3b3b3;
+  border-bottom: 1px solid #b3b3b3;
+}
+
+/* line 18, ../sass/partials/_sidebar.scss */
+.profileinfo h2 {
+  position: relative;
+  left: -250px;
+}
+
+/* line 20, ../sass/partials/_sidebar.scss */
+.gear {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #efefef;
+}
+
+/* line 27, ../sass/partials/_sidebar.scss */
+.gear a.editlink {
+  float: right;
+  font-size: 12px;
+}
+
+/* line 33, ../sass/partials/_sidebar.scss */
+.datainfo {
+  float: left;
+  font-size: 12px;
+  color: #333;
+}
+
+/* line 39, ../sass/partials/_sidebar.scss */
+#accountBalance .label {
+  display: inline-block;
+  color: #9b9b9b;
+  font-size: 12px;
+  font-weight: 100;
+  width: 100px;
+}
+
+/* line 46, ../sass/partials/_sidebar.scss */
+.hlite {
+  background: #efefef;
+  border: 1px solid #bdc7d8;
+  width: 160px;
+  padding: 4px 7px;
+  color: #565656;
+  font-size: 12px;
+}
+
+/* line 55, ../sass/partials/_sidebar.scss */
+.sidebar-item {
+  font-size: 12px;
+  float: left;
+  width: 100%;
+}
+
+/* line 62, ../sass/partials/_sidebar.scss */
+.item-text {
+  float: left;
+  margin-left: 8px;
+}
+
+/* line 1, ../sass/partials/_dish.scss */
+.dishes .card {
+  width: 100%;
+}
+
+/* line 6, ../sass/partials/_dish.scss */
+.ui .card {
+  -moz-box-shadow: 0 0.1em 0.3em 0 #d4d4d5;
+  -webkit-box-shadow: 0 0.1em 0.3em 0 #d4d4d5;
+  box-shadow: 0 0.1em 0.3em 0 #d4d4d5;
+}
+
+/* line 10, ../sass/partials/_dish.scss */
+#page {
+  padding-top: 32px;
+}
+/* line 11, ../sass/partials/_dish.scss */
+#page .dimmer {
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+/* line 14, ../sass/partials/_dish.scss */
+#page .dimmer .dimmer-content {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 19, ../sass/partials/_dish.scss */
+#page .dish-desc {
+  font-size: 1.2rem;
+  padding-left: 10px;
+  color: #454545;
+}
+/* line 24, ../sass/partials/_dish.scss */
+#page .minus-btn-wrapper {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 27, ../sass/partials/_dish.scss */
+#page .minus-btn-wrapper button {
+  border: 1px solid #9b9b9b;
+}
+/* line 31, ../sass/partials/_dish.scss */
+#page .plus-btn-wrapper {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 34, ../sass/partials/_dish.scss */
+#page .plus-btn-wrapper button {
+  border: 1px solid #9b9b9b;
+}
+/* line 38, ../sass/partials/_dish.scss */
+#page .order-count-wrapper {
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+/* line 42, ../sass/partials/_dish.scss */
+#page .dish-count {
+  background-color: white;
+  border: 1px solid #9b9b9b;
+  width: 100%;
+  padding: 7px 11px;
+  font-weight: normal;
+}
+/* line 49, ../sass/partials/_dish.scss */
+#page .img-overlay {
+  position: absolute;
+  height: 40px;
+  width: 100%;
+  bottom: 0;
+  background: rgba(242, 155, 48, 0.9);
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-top: 0.8rem;
+}
+/* line 62, ../sass/partials/_dish.scss */
+#page .ui.segment {
+  padding: 0.4em;
+}
+/* line 65, ../sass/partials/_dish.scss */
+#page .card .content .ui.button {
+  font-size: 0.7rem;
+}
+/* line 70, ../sass/partials/_dish.scss */
+#page .ui.pointing.secondary.menu
+.item {
+  color: #9b9b9b;
+  width: 50%;
+  text-align: center;
+  border-radius: 0;
+}
+/* line 76, ../sass/partials/_dish.scss */
+#page .ui.pointing.secondary.menu
+.item:hover {
+  color: #9b9b9b;
+}
+/* line 80, ../sass/partials/_dish.scss */
+#page .active.item {
+  border-left: none;
+  border-color: #e3151a;
+}
+/* line 85, ../sass/partials/_dish.scss */
+#page .dishinfo .item {
+  color: #454545;
+  font-size: 0.8rem;
+}
+/* line 90, ../sass/partials/_dish.scss */
+#page .tab-dish-detail {
+  border: none;
+  margin-bottom: 0 !important;
+}
+/* line 95, ../sass/partials/_dish.scss */
+#page .dish-detail {
+  line-height: 1.2;
+}
+/* line 98, ../sass/partials/_dish.scss */
+#page .dish-intro {
+  font-size: 0.8rem;
+  color: #9b9b9b;
+}
+/* line 102, ../sass/partials/_dish.scss */
+#page .dish-ingredients {
+  font-size: 0.6rem;
+  color: #9b9b9b;
+  margin-top: 15px;
+}
+/* line 106, ../sass/partials/_dish.scss */
+#page .dish-ingredients .header {
+  color: #454545;
+}
+/* line 110, ../sass/partials/_dish.scss */
+#page .restaurantInfo {
+  font-size: 0.8rem;
+  color: #9b9b9b;
+}
+/* line 113, ../sass/partials/_dish.scss */
+#page .restaurantInfo .header {
+  color: #454545;
+  font-size: 1rem;
+}
+
+/* line 3, ../sass/partials/_home.scss */
+.column {
+  padding-bottom: 1rem;
+}
+
+/* line 7, ../sass/partials/_home.scss */
+.summary-name {
+  font-size: 12px;
+  color: #9b9b9b;
+}
+
+/* line 12, ../sass/partials/_home.scss */
+.summary-count {
+  font-size: 12px;
+  color: #9b9b9b;
+}
+
+/* line 16, ../sass/partials/_home.scss */
+.summary-price {
+  font-size: 12px;
+  color: #9b9b9b;
+}
+
+/* line 20, ../sass/partials/_home.scss */
+.summary-total {
+  font-size: 12px;
+  color: #9b9b9b;
+  display: inline-block;
+  width: 40px;
+  color: #E3151E;
+}
+
+/* line 27, ../sass/partials/_home.scss */
+.summary-tax {
+  font-size: 12px;
+  color: #9b9b9b;
+  display: inline-block;
+  width: 40px;
+}
+
+/* line 33, ../sass/partials/_home.scss */
+.summary-coupon {
+  font-size: 12px;
+  color: #9b9b9b;
+  display: inline-block;
+  width: 40px;
+  color: #5bbd72;
+}
+
+/* line 40, ../sass/partials/_home.scss */
+.summary-location {
+  color: #454545;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+/* line 45, ../sass/partials/_home.scss */
+.summary-status {
+  color: #A3A3A3;
+  font-size: 11px;
+}
+
+/* line 49, ../sass/partials/_home.scss */
+.summary-contact {
+  color: #A3A3A3;
+  font-size: 11px;
+}
+
+/* line 53, ../sass/partials/_home.scss */
+.summary-total-label {
+  font-size: 12px;
+}
+
+/* line 56, ../sass/partials/_home.scss */
+.summary-tax-label {
+  font-size: 12px;
+}
+
+/* line 59, ../sass/partials/_home.scss */
+.summary-coupon-label {
+  font-size: 12px;
+}
+
+/* line 62, ../sass/partials/_home.scss */
+#timeAlert {
+  display: none;
+}
+
+/* line 68, ../sass/partials/_home.scss */
+#orderBtn.red:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px;
+}
+/* line 73, ../sass/partials/_home.scss */
+#orderBtn.red:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px;
+}
+
+/* line 1, ../sass/partials/_manage.scss */
+.desc-line {
+  color: #9b9b9b;
+  font-size: 0.8rem;
+  padding-top: 5px;
+}
+
+/* line 7, ../sass/partials/_manage.scss */
+#menuList {
+  padding: 0 1.2em;
+}
+/* line 9, ../sass/partials/_manage.scss */
+#menuList .item {
+  margin-top: 10px;
+}
+/* line 12, ../sass/partials/_manage.scss */
+#menuList .item .ui.grid.content {
+  color: #9b9b9b;
+  font-size: 0.8rem;
+  padding: 0 10px;
+}
+/* line 16, ../sass/partials/_manage.scss */
+#menuList .item .ui.grid.content .column {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/* line 22, ../sass/partials/_manage.scss */
+#menuList .header {
+  margin-bottom: 30px;
+}
+
+/* line 19, ../sass/screen.scss */
+.default.text {
+  color: #e3151a;
+}
+
+/* line 24, ../sass/screen.scss */
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f7f7f7;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* line 30, ../sass/screen.scss */
+header {
+  min-width: 320px;
+}
+
+/* line 34, ../sass/screen.scss */
+.space {
+  width: 100%;
+  clear: both;
+  height: 100px;
+}
+
+/* line 39, ../sass/screen.scss */
+#today {
+  margin-top: 4px;
+  font-weight: normal;
+  width: 33.33%;
+}
+
+/* line 44, ../sass/screen.scss */
+#barTitle {
+  width: 31%;
+  text-align: center;
+  float: left;
+}
+
+/* line 49, ../sass/screen.scss */
+#hamBtnWrapper {
+  text-align: right;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* line 53, ../sass/screen.scss */
+#hamBtnWrapper > div {
+  margin: 0;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  width: 40%;
+}
+
+/* line 62, ../sass/screen.scss */
+#language {
+  display: inline-block;
+}
+
+/* line 65, ../sass/screen.scss */
+.language-text {
+  float: left;
+}
+
+/* line 71, ../sass/screen.scss */
+.ui.button.red:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px;
+}
+/* line 76, ../sass/screen.scss */
+.ui.button.red:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px;
+}
+
+/* line 85, ../sass/screen.scss */
+.ui.button.grey:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px;
+}
+/* line 90, ../sass/screen.scss */
+.ui.button.grey:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px;
+}
+
+/* line 98, ../sass/screen.scss */
+#loginBtn {
+  background-color: #f2711c;
+  color: white;
+}
+/* line 102, ../sass/screen.scss */
+#loginBtn:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px;
+}
+/* line 107, ../sass/screen.scss */
+#loginBtn:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px;
+}
+/* line 113, ../sass/screen.scss */
+#loginBtn a {
+  color: white;
+}
+
+/* line 117, ../sass/screen.scss */
+#arriveBtn {
+  box-shadow: 0 -0.3em 0 0 rgba(39, 41, 43, 0.15) inset;
+  padding: 1em 2em 1.35em;
+  width: 100%;
+  position: relative;
+}
+/* line 125, ../sass/screen.scss */
+#arriveBtn.red:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px;
+}
+/* line 130, ../sass/screen.scss */
+#arriveBtn.red:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px;
+}
+
+/* line 137, ../sass/screen.scss */
+#fbLoginBtn {
+  box-shadow: 0 -0.3em 0 0 rgba(39, 41, 43, 0.15) inset;
+  padding: 1em 2em 1.35em;
+  width: 100%;
+  position: relative;
+}
+/* line 143, ../sass/screen.scss */
+#fbLoginBtn:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px;
+}
+/* line 148, ../sass/screen.scss */
+#fbLoginBtn:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px;
+}
+
+/* line 157, ../sass/screen.scss */
+#loginBtnContent.grey {
+  color: #9b9b9b;
+}
+/* line 160, ../sass/screen.scss */
+#loginBtnContent.red {
+  color: white;
+}
+
+/* line 164, ../sass/screen.scss */
+.notification {
+  margin-top: 30px;
+}
+
+/* line 167, ../sass/screen.scss */
+#orderMessage {
+  box-shadow: none;
+  background: none;
+  font-size: 12px;
+  color: #9b9b9b;
+  padding: 20px 0 20px 0 !important;
+  margin: 0 !important;
+}
+/* line 175, ../sass/screen.scss */
+#orderMessage a {
+  color: #E3151E;
+}
+
+/* line 179, ../sass/screen.scss */
+#statusTracker {
+  font-size: 12px;
+}
+
+/* line 182, ../sass/screen.scss */
+#payment {
+  padding: 15px;
+}
+
+/* line 185, ../sass/screen.scss */
+#addressOption {
+  min-width: 150px;
+  margin-left: 2%;
+}
+/* line 188, ../sass/screen.scss */
+#addressOption .default {
+  float: left;
+  width: 75%;
+  text-shadow: 0.5px -0.5px white;
+}
+/* line 194, ../sass/screen.scss */
+#addressOption .dropdown.icon {
+  margin-bottom: 10px;
+}
+
+/* line 198, ../sass/screen.scss */
+#expyear {
+  min-width: 150px;
+}
+
+/* line 201, ../sass/screen.scss */
+.check {
+  width: 85%;
+  margin-left: 20px;
+}
+
+/* line 205, ../sass/screen.scss */
+.thanks {
+  color: #E3151A;
+}
+
+/* line 208, ../sass/screen.scss */
+#customerinfo {
+  padding: 10px;
+}
+
+/* line 211, ../sass/screen.scss */
+.order-detail {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* line 214, ../sass/screen.scss */
+.send {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  line-height: 50px;
+  background: #E3151A !important;
+  height: 78px;
+}
+/* line 221, ../sass/screen.scss */
+.send:hover {
+  opacity: 0.8;
+}
+/* line 224, ../sass/screen.scss */
+.send i {
+  color: white;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* line 230, ../sass/screen.scss */
+.red {
+  color: #E3151A;
+}
+
+/* line 233, ../sass/screen.scss */
+.gray {
+  color: #9b9b9b;
+}
+
+/* line 237, ../sass/screen.scss */
+#orderStats .column {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* line 241, ../sass/screen.scss */
+#orderStats .summary-list {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* line 246, ../sass/screen.scss */
+#inputCardInfo {
+  display: block;
+  margin: 0 0 .2857rem;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: .9285em;
+  font-weight: 700;
+  text-transform: none;
+}
+
+/* line 256, ../sass/screen.scss */
+#newCardInfo {
+  transform: none;
+  margin: 2%;
+}
+
+/* line 261, ../sass/screen.scss */
+#contactinfo {
+  margin: 2%;
+}
+
+/* line 264, ../sass/screen.scss */
+#agreements {
+  margin: 2%;
+}
+
+/* line 267, ../sass/screen.scss */
+#basicinfo {
+  margin: 2%;
+}
+
+/* line 270, ../sass/screen.scss */
+#cardselector {
+  margin: 2%;
+}
+
+/* line 273, ../sass/screen.scss */
+#cw2 {
+  max-width: 160px !important;
+}
+
+/* line 276, ../sass/screen.scss */
+#fullscreen {
+  display: none;
+}
+
+/* line 279, ../sass/screen.scss */
+#smallmap {
+  width: 100%;
+}
+
+/* line 282, ../sass/screen.scss */
+.arrived {
+  color: #e3151a;
+}
+
+/* line 285, ../sass/screen.scss */
+#loginorsignup {
+  margin-top: 0;
+}
+
+/* line 288, ../sass/screen.scss */
+#logo {
+  text-align: center;
+}
+
+@media (max-width: 736px) {
+  /* line 292, ../sass/screen.scss */
+  #img {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 736px) {
+  /* line 298, ../sass/screen.scss */
+  #img {
+    width: 50%;
+    height: 50%;
+  }
+}
+/* line 303, ../sass/screen.scss */
+#signupReminder {
+  font-size: 15px;
+  color: #9b9b9b;
+  text-align: center;
+  margin: 10px;
+}
+
+/* line 313, ../sass/screen.scss */
+.profilePic {
+  border-radius: 100%;
+  overflow: hidden;
+  box-sizing: content-box;
+  margin: 0 auto;
+  border: 5px solid #f7f7f7;
+  width: 90px;
+  height: 90px;
+}
+
+/* line 324, ../sass/screen.scss */
+#userFullName {
+  margin: 15px 0;
+  color: #e3151a;
+  font-weight: bold;
+}
+
+/* line 329, ../sass/screen.scss */
+#referlink {
+  margin: 0 auto;
+}
+
+/* line 332, ../sass/screen.scss */
+#forgotlink {
+  font-size: 14px;
+  float: right;
+}
+
+/* line 336, ../sass/screen.scss */
+#sidebarWrapper {
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+}
+
+/* line 340, ../sass/screen.scss */
+.ui.inverted.menu {
+  background-color: #E3151A;
+  opacity: 0.9;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+/* line 345, ../sass/screen.scss */
+.ui.inverted.menu.bottom {
+  font-size: 0.6em;
+}
+/* line 347, ../sass/screen.scss */
+.ui.inverted.menu.bottom .item {
+  display: block;
+}
+/* line 350, ../sass/screen.scss */
+.ui.inverted.menu.bottom .icon {
+  display: block;
+  text-align: center;
+  height: 1em;
+  margin: 0 auto 0.5em;
+  font-size: 1.8em;
+}
+
+/* line 359, ../sass/screen.scss */
+.dishes .card {
+  width: 100%;
+}
+
+/* line 364, ../sass/screen.scss */
+#paymentBtn.red:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px;
+}
+/* line 369, ../sass/screen.scss */
+#paymentBtn.red:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px;
+}
+
+/* line 377, ../sass/screen.scss */
+#signUpBtn.red:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px;
+}
+/* line 382, ../sass/screen.scss */
+#signUpBtn.red:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px;
+}
+
+/* line 390, ../sass/screen.scss */
+#sendemailBtn.red:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px;
+}
+/* line 395, ../sass/screen.scss */
+#sendemailBtn.red:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px;
+}
+
+/* line 403, ../sass/screen.scss */
+#resetBtn.red:hover {
+  box-shadow: 0 -0.25em 0 0 rgba(39, 41, 43, 0.15) inset;
+  top: 1px;
+}
+/* line 408, ../sass/screen.scss */
+#resetBtn.red:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 2px;
+}
+
+/* line 418, ../sass/screen.scss */
+.ui.form .fields .wide.field {
+  width: 6.25%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* line 427, ../sass/screen.scss */
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+/* line 434, ../sass/screen.scss */
+#termsandconditions > a {
+  padding-left: 8%;
+}
+
+/* line 438, ../sass/screen.scss */
+.college-selector {
+  color: rgba(0, 0, 0, 0.95) !important;
+}
+/* line 440, ../sass/screen.scss */
+.college-selector .default.text {
+  color: rgba(0, 0, 0, 0.95) !important;
+}

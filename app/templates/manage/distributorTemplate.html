@@ -1,0 +1,94 @@
+<div class="ui page centered grid ">
+    <div class="doubling four column row">
+        <div class="left floated left aligned eight wide column">
+            <p>
+            <strong>
+                <label id="manageTitle">Lunchbrother</label>，
+                <label id="buildingLabel"></label>
+                <label id="has">has</label>
+                <label id="orderNumberLabel"></label>
+                <label id="numberOrder">orders</label>
+                <label id="searchResultLabel">match search result</label>
+            </strong>
+            </p>
+        </div>
+
+        <div class="right floated right aligned eight wide column">
+            <select id="addressOption" class="right floated right aligned eight wide column ui dropdown">
+                <option id="pickUpAddress" value="">Select Your Area</option>
+                <% var count = 0; %>
+                <% _.each(pickUpLocations, function(pickUpLocation){ %>
+                <% if(count === 0){ %>
+                <option value="<%= pickUpLocation.id %>" selected><%= pickUpLocation.get('address') %></option>
+                <% } else { %>
+                <option value="<%= pickUpLocation.id %>"><%= pickUpLocation.get('address') %></option>
+                <% } %>
+                <% count++; %>
+                <% }); %>
+            </select>
+        </div>
+    </div>
+
+    <div class="sixteen wide column">
+        <div class="ui fluid icon input">
+            <input id="searchInput" type="text" placeholder="Search by last name...">
+            <i class="search icon"></i>
+        </div>
+    </div>
+
+
+    <div class="sixteen wide column">
+        <table id="orders-table" class="ui compact striped sortable single line table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Order detail</th>
+                    <th>Order #</th>
+                    <th colspan="2">Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="orderList">
+            </tbody>
+        </table>
+        <div class="ui divider"></div>
+    </div>
+    <div class="sixteen wide column">
+        <button id="arriveBtn" class="center aligned ui button"><i class="volume down icon"></i>Arrived!</button>
+    </div>
+</div>
+
+<div id="confirmDeliveryPayment" class="ui small test modal">
+    <div class="header" style="background-color: #ffffff" id="manageConfirmTitle">
+        Please make sure this order has been paid
+    </div>
+    <div class="content">
+        <table width="100%">
+            <tr>
+                <td style="font-size: 12pt">
+                    <label id="manageCustomer">Customer</label>: <label id="confirmDialogName"></label><br><br>
+                    <label id="manageOrderNumber">Order Number</label>: #<label id="confirmDialogOrderId"></label>
+                </td>
+                <td style="font-size: 16pt; color: red">
+                    <label id="manageTotal">Total</label>: $<label id="confirmDialogPay"></label>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="actions">
+        <div class="two fluid ui buttons">
+            <div class="ui basic cancel button">
+                <i class="remove icon"></i>
+                <label id="manageCancel">Cancel</label>
+            </div>
+            <div class="ui ok basic button">
+                <i class="checkmark icon"></i>
+                <label id="manageConfirm">Confirm</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$('#orders-table').tablesort();
+</script>

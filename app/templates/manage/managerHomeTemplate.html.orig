@@ -1,0 +1,300 @@
+<h4 class="ui top attached red header">
+    <i class="marker icon small"></i>Manage distribution points
+</h4>    
+<div class="ui attached segment">
+    <div class="ui middle very relaxed aligned list">
+        <% _.each(distributingPoints, function(distributingPoint) { %>
+        <div class="item">
+            <div class="right floated content">
+                <div class="ui basic mini buttons">
+                    <div class="ui button"><a href="<%= distributingPoint.get('youtubeLink') %>" target="_blank"><i class="youtube play icon"></i></a></div>
+                    <div class="ui button" id="dpEditButton-<%= distributingPoint.id %>"
+                                           data-id="<%= distributingPoint.id %>"
+                                           data-youtube="<%= distributingPoint.get('youtubeLink') %>"
+                                           data-address="<%= distributingPoint.get('address') %>"
+                                           <% if (distributingPoint.get('distributor')) { %>
+                                           data-distributor="<%= distributingPoint.get('distributor').id %>"
+                                           <% } else { %>
+                                           data-distributor=""
+                                           <% } %>
+                                           >Edit</div>
+                    <div class="ui button" id="dpDeleteButton-<%= distributingPoint.id %>" data-id="<%= distributingPoint.id %>"><i class="remove circle outline icon"></i></div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="header">
+                    <%= distributingPoint.get('address') %>
+                </div>
+                <div class="desc-line description">
+                    <% if(distributingPoint.get('distributor')) { %>
+                    Contact: <%= distributingPoint.get('distributor').get('firstName') %> (<%= distributingPoint.get('distributor').get('telnum') %>)
+                    <% } else { %>
+                    No distributor assigned
+                </div>
+                <% } %>
+            </div>
+        </div>
+
+    </div>
+    <% })%>
+</div>
+<div class="ui bottom attached orange button" id="DPAdd" data-youtubeLink="" data-address="">
+    <i class="add icon"></i>
+    Add a new location
+</div>
+
+<h4 class="ui top attached red header">
+    <i class="users icon small"></i>Drivers & Distributors
+</h4>
+<div class="ui attached segment">
+<<<<<<< HEAD
+    <div class="ui middle aligned selection list">
+        <% _.each(workers, function(worker) { %>
+        <div class="item">
+            <div class="right floated ui basic mini buttons">
+                <div class="ui button" id="workerEditButton-<%= worker.id %>"
+                     data-id="<%= worker.id %>"
+                     data-first-name="<%= worker.get('firstName') %>"
+                     data-last-name="<%= worker.get('lastName') %>"
+                     data-email="<%= worker.get('email') %>"
+                     data-phone-number="<%= worker.get('telnum') %>"
+                     data-password="<%= worker.get('password') %>"
+                     data-title="<%= worker.get('permission') %>">Edit</div>
+                <div class="ui button" id="workerDeleteButton-<%= worker.id %>" data-id="<%= worker.id %>"><i class="remove circle outline icon"></i></div>
+            </div>
+            <img class="ui avatar image" src="/images/avatar/small/helen.jpg">
+            <div class="content">
+                <div class="header"><%= worker.get('firstName') %></div>
+                <% if(worker.get('permission') === DRIVER) { %>
+                    <div class="description">Driver</div>
+                <% } else { %>
+                    <div class="description">Distributor</div>
+                <% } %>
+=======
+    <div class="ui middle very relaxed aligned list">
+        <div class="item">
+            <div class="right floated content">
+                <div class="ui mini basic buttons">
+                    <div class="ui button">Edit</div>
+                    <div class="ui button"><i class="remove circle outline icon"></i></div>
+                </div>
+            </div>
+            <img class="ui avatar image" src="/images/avatar/small/helen.jpg">
+            <div class="content">
+                <div class="header">Helen</div>
+                <div class="description desc-line">Driver</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="right floated content">
+                <div class="ui mini basic buttons">
+                    <div class="ui button">Edit</div>
+                    <div class="ui button"><i class="remove circle outline icon"></i></div>
+                </div>
+            </div>
+            <img class="ui avatar image" src="/images/avatar/small/christian.jpg">
+            <div class="content">
+                <div class="header">Christian</div>
+                <div class="description desc-line">Driver</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="right floated content">
+                <div class="ui mini basic buttons">
+                    <div class="ui button">Edit</div>
+                    <div class="ui button"><i class="remove circle outline icon"></i></div>
+                </div>
+            </div>
+            <img class="ui avatar image" src="/images/avatar/small/daniel.jpg">
+            <div class="content">
+                <div class="header">Daniel</div>
+                <div class="description desc-line">Distriputor</div>
+>>>>>>> origin/MPD-55
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
+<div class="ui bottom attached orange button" id="addPerson" data-youtubeLink="" data-address="">
+    <i class="add icon"></i>
+    Add a new person
+</div>
+
+<h4 class="ui red top attached header">
+    <i class="small file text outline icon"></i>Manage weekly menu
+</h4>
+<div class="ui bottom attached segment">
+    <div class="ui menu">
+        <div class="ui dropdown fluid item week-selection">
+            <i class="small calendar icon"></i><div class="default text" id="weekMenu">Select a week</div><i class="dropdown icon"></i>
+            <div class="menu">
+                <% _.each(weeks, function(week) { %>
+                <a class="item" data-value="<%= week %>">Weekly Menu <%= week %></a>
+                <% })%>
+            </div>
+        </div>
+    </div>
+    <div id="menuList"></div>
+    <div class="ui fluid vertical basic buttons">
+        <button id="showDistributorStatus" class="ui button">Check distributor status <i class="right arrow icon"></i></button>
+        <button id="showDriverStatus" class="ui button">Check driver status <i class="right arrow icon"></i></button>
+    </div>
+</div>
+
+<!--Widget Dialogs-->
+<div id="editDPDialog" class="ui small test modal">
+    <div class="header" style="background-color: #ffffff">
+        <label id="editDPLabel">Distribution Point Editor</label>
+    </div>
+    <div action="" method="POST" id="dpForm" class="ui form">
+        <div id="basicDPInfo">
+            <div id="dpinfo" class="two fields">
+                <div class="ui fluid field">
+                    <input id="dp_location" class="ui input location" placeholder="Name of Location" type="text" name="dp_location" value="">
+                </div>
+                <div class="ui fluid field">
+                    <input id="dp_youtubeLink" class="ui input youtubeLink" placeholder="Youtube Link" type="text" name="dp_youtube_link" value="">
+                </div>
+            </div>
+        </div>
+        <div id="dtinfo" class="two fields">
+            <div class="ui fluid field" style="padding-left: 20px; padding-bottom: 20px">
+                <select id="distributorSelector">
+                    <option value="">Select your distributor</option>
+                    <% _.each(distributors, function(distributor) { %>
+                    <option value="<%= distributor.id %>">
+                    <%= distributor.get('firstName') %> <%= distributor.get('lastName') %>
+                    </option>
+                    <% }) %>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui basic cancel button">
+            <i class="remove icon"></i>
+            <label id="DPCancel">Cancel</label>
+        </div>
+        <div class="ui ok green button">
+            <i class="checkmark icon"></i>
+            <label id="DPSave">Save</label>
+        </div>
+    </div>
+</div>
+
+<div id="deleteDPDialog" class="ui small test modal">
+    <div class="header" style="background-color: #ffffff">
+        <label id="deleteDPLabel">Are you sure?</label>
+    </div>
+    <div class="content">
+        Do you really want to delete this Distribution Point?
+    </div>
+    <div class="actions">
+        <div class="ui cancel button">
+            <i class="remove icon"></i>
+            <label id="deleteDPCancel">Cancel</label>
+        </div>
+        <div class="ui ok orange button">
+            <i class="checkmark icon"></i>
+            <label id="deleteDPConfirm">Delete</label>
+        </div>
+    </div>
+</div>
+
+<div id="deletePersonDialog" class="ui small test modal">
+    <div class="header" style="background-color: #ffffff">
+        <label id="deletePersonLabel">Are you sure?</label>
+    </div>
+    <div class="content">
+        Do you really want to remove this person?
+    </div>
+    <div class="actions">
+        <div class="ui cancel button">
+            <i class="remove icon"></i>
+            <label id="deletePersonCancel">Cancel</label>
+        </div>
+        <div class="ui ok orange button">
+            <i class="checkmark icon"></i>
+            <label id="deletePersonConfirm">Delete</label>
+        </div>
+    </div>
+</div>
+
+<div id="publishMenuDialog" class="ui small test modal">
+    <div class="header" style="background-color: #ffffff">
+        <label id="publishMenuLabel">Publish</label>
+    </div>
+    <div class="content">
+        Your menu is going to be published. Are you sure? </br>
+        <span id="publishMenuWarningLine" class="red"></span>
+    </div>
+    <div class="actions">
+        <div class="ui cancel button">
+            <i class="remove icon"></i>
+            <label id="publishMenuCancel">Cancel</label>
+        </div>
+        <div class="ui green ok button">
+            <i class="checkmark icon"></i>
+            <label id="publishMenuConfirm">Confirm</label>
+        </div>
+    </div>
+</div>
+
+<div id="editPersonDialog" class="ui small test modal">
+    <div class="header" style="background-color: #ffffff">
+        <label id="editPersonLabel">Driver/Distributor Editor</label>
+    </div>
+    <div action="" method="POST" id="new-personForm" class="ui form">
+        <div id="basicPersonInfo">
+            <div id="basicinfo">
+                <div id="nameinfo" class="two fields">
+                    <div class="ui fluid field">
+                        <input id="first_name" class="ui input fname" placeholder="First Name" type="text" name="first_name" value="">
+                    </div>
+                    <div class="ui fluid field">
+                        <input id="last_name" class="ui input lname" placeholder="Last Name" type="text" name="last_name" value="">
+                    </div>
+                </div>
+                <div class="ui fluid field">
+                    <input id="email" class="ui input required email" placeholder="E-mail, this will be your username" type="text" name="email">
+                </div>
+                <div class="ui fluid required field">
+                    <input id="phonenumber" class="ui input required phonenumber" placeholder="Phone Number, e.g. 7772228888" type="text" name="phonenumber">
+                </div>
+                <div class="ui fluid field">
+                    <input id="password" class="ui input required password" placeholder="Password" type="password" name="password">
+                </div>
+                <div class="ui fluid field">
+                    <select id="titleOptions">
+                        <option value="">Select your title</option>
+                        <option value="3">Driver</option>
+                        <option value="4">Distributor</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="two fluid ui buttons">
+            <div class="ui  cancel button">
+                <i class="remove icon"></i>
+                <label id="editPersonCancel">Cancel</label>
+            </div>
+            <div class="ui ok green button">
+                <i class="checkmark icon"></i>
+                <label id="editPersonSave">Save</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Statistic Visualization -->
+<div class="ui segment">
+    <h4 class="ui red header" style="padding-left: 10px; padding-top: 10px">
+        <i class="line chart icon small"></i>Sales Summary
+    </h4>
+    <span style="padding-left: 10px">Date: <input type="text" id="datepicker"></span>
+    <table class="ui small celled unstackable table" id="salesTableBody">
+    </table>
+</div>
